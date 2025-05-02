@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Welcome to my Site..</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.typekit.net/dbu8pdp.css">
+</head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="This is my practice for making a web page.">
+  <meta name="keywords" content="HTML,CSS,art">
+
+
+  <style>
+
+    
+    body {
+      background-color: rgb(235, 255, 255);
+      color: rgb(196, 161, 161);
+      margin-top: 10px;
+      margin-bottom: 100px;
+      margin-right: 100px;
+      margin-left: 100px;
+      font-family: "Roca", serif;
+      font-weight: 50;
+      font-size: 15pt;
+    }
+
+    p.TitleText {
+      font-size: 50pt;
+      color: rgb(203, 195, 249);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 10px;
+      top:50%;
+      left: 50%;
+      font-family: "Roca", serif;
+      text-shadow: 0 0 30px rgb(255, 236, 244);
+    }
+
+
+    p.InsText {
+      font-size: 10pt;
+      color: rgb(152, 186, 255);
+      font-weight: 100;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-family: "Roca", Bold;
+    }
+
+
+    .logo-link {
+      position: absolute;
+      top: 50px;
+      left: 70px;
+      font-family: "Roca", Regular;
+      font-size: 25px;
+      text-decoration: none;
+      color: #439eff;
+    }
+    .logo-link:hover {
+      color: #439eff;
+      text-decoration: underline;
+    }
+
+    .game-section {
+        display: flex;
+        gap: 2%;
+        padding: 2%;
+        box-sizing: border-box;
+}
+
+    .game-box {
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .game-box img {
+        width: 100%; 
+        border-radius: 7px;
+        transition: 1s;
+    }
+
+        .column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .game-box img:hover {
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+        transform: scale(1.03);
+    }
+    </style>
+
+
+<body>
+    <a href="index.html" class="logo-link">Leyou Yang</a>
+    <p class="TitleText">Game projects</p>
+
+    <div class="game-section">
+        <div class="column">
+            <div class="game-box">
+            <h2>DIZZILUSIONAL</h2>
+            <a href="https://youtu.be/wkSU7qm9beA">
+                <img src="Di.png" alt="Game 1 cover">
+            </a>
+            <p class="InsText">Click image to see the demo video.</p>
+            <p class="body">An old tale has been told for hundreds of years — in this southwestern village in China, the only way for a woman to belong to the village is through an arranged marriage. Girls are married off at a very young age, without the chance to choose. One girl, Wuhuaka, broke this tradition and was cursed for not following the norm.
+
+                Players will become the heroine of the story — an average office worker, at a marriageable age, still trying to figure out relationships while uncovering a mystery from the past.
+                
+                This is a narrative puzzle game. The puzzles are designed to reflect the traditions and cultural artifacts of southwest China. Click the image to watch the demo video.</p>
+            </div>
+
+
+            <div class="game-box">
+                <h1>Endless Summer</h1>
+                <a href="https://yuiii2756.itch.io/endless-summer">
+                    <img src="House.png" alt="Game 3 cover">
+                </a>
+                <p class="InsText">Click image to see itch page.</p>
+                <p class="body">There is a summer, a summer that you thought would last forever before you enter adulthood— and you realize such same summers will never return again.
+
+                    This game is a simulator in a minivan, which travels all the time during an endless summer before your adulthood. Players can decide what actions to take (3 actions can be taken) in order to arrive at the destination. Choices are destinations that have no logical associations, just like those choices we thought they matter so much that our life depends on it turns out to be so random.
+                    
+                    Enjoy!</p>
+            </div>
+        </div>
+
+        <div class="column">
+                <div class="game-box">
+                <h3>CAB HOUSE</h3>
+                <a href="https://ah-0811.itch.io/cabhouse">
+                <img src="Cab.png" alt="Game 2 cover">
+                </a>
+                <p class="InsText">Click image to see itch page.</p>
+                <p class="body">Cab House is a pet simulator. The little alien— both crab-like and cat-like, therefore a cab, is your pet. The cab does not enjoy light, so it stays at the bottom of the tank when light is on. The player’s job is to ensure the cab has enough jellyfish to eat by turning off the light.
+
+                This project is a cooperative project.</p>
+                </div>
+                <div class="game-box">
+                <h4>Murder in the kitchen</h4>
+                <a href="https://yuiii2756.itch.io/in-the-kitchen">
+                <img src="kitchen.png" alt="Game 2 cover">
+                </a>
+                <p class="InsText">Click image to see itch page.</p>
+                <p class="body">Once step into the kitchen, your time is eliminated without noticing. The need for women to work in kitchens is implicit, before 1950, open kitchens did not exist because food preparation was considered backstage. Once stepping into a kitchen, you are being murdered through a slow process.
+
+                    This game is a horror game that takes place in a narrow kitchen, monitoring the life of housewives. Players will try to find a way out of the cycle through play-throughs.
+                    
+                    Click to visit itch page..</p>
+
+            </div>
+
+    </div>
+
+</body>
+</html>
