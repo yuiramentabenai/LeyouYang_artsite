@@ -3,20 +3,19 @@
 
 <head>
   <title>Welcome to my Site..</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="My own website.">
   <meta name="keywords" content="HTML,CSS,art">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
   <style>
     @import url("https://use.typekit.net/dbu8pdp.css");
-    
+
+    /* ===== 电脑端原布局（保持不变） ===== */
     body {
       background-color: rgb(183, 255, 254);
       color: rgb(35, 109, 247);
@@ -27,77 +26,71 @@
       font-family: "Roca", serif;
       font-weight: 300;
       font-size: 15pt;
-
-
       background-image: url('Kor.png');
       background-repeat: repeat;
-      background-size:contain;
+      background-size: contain;
       animation: moveBg 30s linear infinite;
     }
 
     @keyframes moveBg {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 1000px 0;
-  }
-}
-
-        .Intro-section {
-          position: absolute;
-          top: 20%;
-          right: 5%;
-          display: flex;
-          gap: 10px;
-          padding: 10px;
-          width: 300px;
+      0% { background-position: 0 0; }
+      100% { background-position: 1000px 0; }
     }
 
-      .Intro-section img {
-    width: 300px;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .Ana-section {
-          position: absolute;
-          top: 50%;
-          right: 20%;
-          display: flex;
-          gap: 10px;
-          padding: 10px;
-          width: 500px;
+    .Intro-section {
+      position: absolute;
+      top: 20%;
+      right: 5%;
+      display: flex;
+      gap: 10px;
+      padding: 10px;
+      width: 300px;
     }
 
-            .window-wrapper {
-        position: relative;
-        width: 400px;
-      }
+    .Intro-section img {
+      width: 300px;
+      max-width: 100%;
+      height: auto;
+    }
 
-      .window-wrapper img {
-        width: 100%;
-        height: auto;
-      }
+    .Ana-section {
+      position: absolute;
+      top: 50%;
+      right: 20%;
+      display: flex;
+      gap: 10px;
+      padding: 10px;
+      width: 500px;
+    }
 
-      .text-overlay {
-        position: absolute;
-        top: 50px;
-        left: 15%;
-        right: 19%;
-        color: #5f73a1;
-        font-size: 14px;
-        font-family: "Roca", serif;
-      }
+    .window-wrapper {
+      position: relative;
+      width: 400px;
+    }
 
-  .Option-section {
-          position: absolute;
-          top: 80%;
-          right: 10%;
-          display: flex;
-          gap: 20px;
-          padding: 10px;
-          width: 700px;
+    .window-wrapper img {
+      width: 100%;
+      height: auto;
+    }
+
+    .text-overlay {
+      position: absolute;
+      top: 50px;
+      left: 15%;
+      right: 19%;
+      color: #5f73a1;
+      font-size: 14px;
+      font-family: "Roca", serif;
+    }
+
+    .Option-section {
+      position: absolute;
+      top: 80%;
+      right: 10%;
+      display: flex;
+      gap: 20px;
+      padding: 10px;
+      width: 700px;
     }
 
     p.TitleText {
@@ -162,51 +155,85 @@
     a.nav4:active {
       color: rgb(255, 187, 224);
     }
-  </style>
 
+    /* ===== 手机端自适应 ===== */
+    @media (max-width: 768px) {
+      body {
+        margin: 1vh 5vw 5vh 5vw;
+        font-size: 12pt;
+      }
+
+      .Intro-section, .Ana-section, .Option-section {
+        position: static; /* 取消绝对定位 */
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+        flex-direction: column;
+      }
+
+      .Option-section {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .text-overlay {
+        left: 5%;
+        right: 5%;
+        font-size: 0.8rem;
+      }
+
+      .window-wrapper {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
 
 <body>
 
-<a href="index.html" class="logo-link">Leyou Yang</a>
-<div class="text-box">
-  <span>Hey there  ^- wwww-^</span> 
-  <span>Welcome</span> 
-  <span>to</span> 
-  <span>my</span>
-  <span>cyber</span>
-  <span>gallery</span>
-  <span>^ ^</span>
-</div>
-
-
-<p>
-  <img src="gamePage.png" style="width:300px">
-</p>
-
-<div class="Option-section">
-<a href="GamePage.html" class="nav2">Game Projects</a>
-<a href="FineArt.html" class="nav2">Fine Arts</a>
-<a href="Photo.html" class="nav2">Photagraphy</a>
-<a href="Arch.html" class="nav2">Architecture</a>
-</div>
-
-<div class="Intro-section">
-  <img src="me.png">
-</div>
-
-<div class="Ana-section">
-  <div class="window-wrapper">
-    <img src="Frame.png" alt="Window">
-    <div class="text-overlay">Call me Christina/Leyou ^^. I am honored to guide you through this journey. I work with multiple medias, click on options to see detailed description.</div>
+  <a href="index.html" class="logo-link">Leyou Yang</a>
+  <div class="text-box">
+    <span>Hey there  ^- wwww-^</span> 
+    <span>Welcome</span> 
+    <span>to</span> 
+    <span>my</span>
+    <span>cyber</span>
+    <span>gallery</span>
+    <span>^ ^</span>
   </div>
-</div>
 
-<p>
-  <img src="Cam.png" style="width:300px;     margin-top: 300px;
-  margin-bottom: 100px;
-  margin-right: 400px;
-  margin-left: 0px;">
-</p>
+  <p>
+    <img src="gamePage.png" style="width:300px">
+  </p>
+
+  <div class="Option-section">
+    <a href="GamePage.html" class="nav2">Game Projects</a>
+    <a href="FineArt.html" class="nav2">Fine Arts</a>
+    <a href="Photo.html" class="nav2">Photagraphy</a>
+    <a href="Arch.html" class="nav2">Architecture</a>
+  </div>
+
+  <div class="Intro-section">
+    <img src="me.png">
+  </div>
+
+  <div class="Ana-section">
+    <div class="window-wrapper">
+      <img src="Frame.png" alt="Window">
+      <div class="text-overlay">Call me Christina/Leyou ^^. I am honored to guide you through this journey. I work with multiple medias, click on options to see detailed description.</div>
+    </div>
+  </div>
+
+  <p>
+    <img src="Cam.png" style="width:300px; margin-top:300px; margin-bottom:100px; margin-right:400px; margin-left:0px;">
+  </p>
 
 </body>
 </html>
