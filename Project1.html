@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Welcome to my Site..</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="This is my practice for making a web page." />
+  <meta name="keywords" content="HTML,CSS,art" />
+  <link rel="stylesheet" href="https://use.typekit.net/dbu8pdp.css">
+
+  <style>
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background-color: rgb(230, 255, 206);
+      color: rgb(196, 161, 161);
+      font-family: "Roca", serif;
+      font-weight: 400;
+      font-size: 15pt;
+    }
+    img, video { display:block; max-width:100%; height:auto; }
+
+    .logo-link {
+      font-family: "Roca", Regular;
+      font-size: 25px;
+      text-decoration: none;
+      color: #e35011;
+    }
+    .logo-link:hover { color:#439eff; text-decoration:underline; }
+
+    .nav-links {
+      display: flex;
+      gap: 50px;
+      position: fixed;
+      top: 20px;
+      left: 30px;
+      z-index: 9999;
+    }
+
+.hero {
+  position: relative;
+  height: 80vh; 
+  overflow: hidden;
+  width: 100%;
+  margin-top: 60px;
+}
+    .hero .video-link { position:relative; display:block; width:100%; height:100%; }
+    .hero .hero-media { position:relative; width:100%; height:100%; }
+    .hero .hero-media img,
+    .hero .hero-media video {
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      object-fit:cover;
+      border-radius:0;
+    }
+    .hero .hero-media video { opacity:0; transition:opacity .3s ease; }
+    .hero .hero-media:hover video { opacity:1; }
+:root { --edge: 40px; }
+.art-section {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 0;
+  background: transparent;
+}
+
+
+.art-section {
+  width: 92%; 
+  max-width: 1600px;
+  margin: 0 auto; 
+  padding: 40px 0;
+  background: transparent;
+}
+
+
+.art-content {
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+.art-content.img img,
+.narrative-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  margin: 0 auto;
+}
+    .container {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .description {
+      font-size: 20px;
+      line-height: 1.6;
+      color: #756565;
+    }
+
+   .media-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: nowrap;
+  margin-top: 10px;
+}
+
+.media-container {
+  flex: 1 1 45%;
+  aspect-ratio: 4/5;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+}
+    .media-container img,
+    .media-container video {
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      object-fit:cover;
+      border-radius:12px;
+      transition: opacity .3s ease;
+    }
+    .media-container video { opacity:0; }
+    .media-container:hover video { opacity:1; }
+    .media-container:hover img { opacity:0; }
+  </style>
+</head>
+
+<body>
+
+  <div class="nav-links">
+    <a href="index.html" class="logo-link">Home</a>
+    <a href="GamePage.html" class="logo-link">Game projects</a>
+  </div>
+
+<section class="hero">
+  <a href="https://www.youtube.com/watch?v=wkSU7qm9beA" target="_blank" class="video-link">
+    <div class="hero-media">
+      <img src="p1Process/intro (2).png" alt="intro Image" />
+    </div>
+  </a>
+</section>
+
+
+  <div class="art-section">
+    <div class="art-title"><h1>Game intro</h1></div>
+    <div class="art-content">
+      <div class="container">
+        <p class="description">
+          Dizzilusional is a narrative puzzle game. The project focuses on the conflicts of social expectation and personal life choices.
+          Iteration of rights develops while time goes by. The myth which the game rooted from is the story of "Wuhuaka".
+          The myth is a fundamental shift point of marriage in southwestern China. Aiming to construct the connection of players' interactions
+          and the result of iteration, the project is created, highlighting environmental narrative and cultural representations.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="art-section">
+    <div class="art-content img">
+      <img src="p1Process/intro (1).png" alt="Narrative Flow Diagram" class="narrative-img" />
+    </div>
+  </div>
+
+  <div class="art-section">
+    <div class="art-title"><h1>Main Character</h1></div>
+    <div class="art-content">
+      <div class="container">
+        <div style="display:flex; align-items:flex-start; gap:40px; flex-wrap:wrap;">
+          <div class="column" style="flex:1; min-width:280px;">
+            <p class="description">
+              A mediocre researcher who is studying medicine. In her twenties, she lives in a time when peers are getting married,
+              while she is not on that track yet. Her mother pushes social expectations on her, warning of terrible endings for those
+              who do not marry.
+            </p>
+            <p class="description">
+              Iteration—people’s life choices evolving through time—is central to the story. The main character is from the modern world,
+              while what she tries to change belongs to the era of the myth. Two versions of the heroine were designed.
+            </p>
+            <p class="description">Hover to see character development.</p>
+          </div>
+
+          <div class="media-row" style="flex:1;">
+            <div class="media-container">
+              <img src="p1Hero.png" alt="Character Image 1" />
+              <video src="3.mp4" muted loop playsinline preload="metadata"></video>
+            </div>
+
+            <div class="media-container">
+              <img src="p1HeroD.png" alt="Character Image 2" />
+              <video src="6.mp4" muted loop playsinline preload="metadata"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="art-section">
+    <div class="art-title"><h1>Narrative</h1></div>
+    <div class="art-content img">
+      <img src="p1Narrative.png" alt="Narrative Flow Diagram" class="narrative-img" />
+    </div>
+  </div>
+
+
+  <div class="art-section">
+    <div class="art-title"><h1>Game Flow Chart</h1></div>
+    <div class="art-content img">
+      <img src="p1gameFlow.png" alt="Game Flow" class="narrative-img" />
+    </div>
+  </div>
+
+  <div class="art-section">
+    <div class="art-title"><h1>Puzzles</h1></div>
+    <div class="art-content img">
+
+    </div>
+  </div>
+
+  <script>
+
+    document.querySelectorAll('.media-container').forEach(container => {
+      const video = container.querySelector('video');
+      if (!video) return;
+      container.addEventListener('mouseenter', () => video.play());
+      container.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+    });
+  </script>
+</body>
+</html>
