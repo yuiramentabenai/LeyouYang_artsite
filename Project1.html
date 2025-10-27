@@ -10,6 +10,8 @@
 
   <style>
 
+    
+
     * { box-sizing: border-box; }
     html, body { height: 100%; }
     body {
@@ -102,6 +104,13 @@
       color: #756565;
     }
 
+        .Ndescription {
+      font-size: 30px;
+        align-items: center;
+      line-height: 1.6;
+      color: #6d8550;
+    }
+
    .media-row {
   display: flex;
   align-items: flex-start;
@@ -129,6 +138,53 @@
     .media-container video { opacity:0; }
     .media-container:hover video { opacity:1; }
     .media-container:hover img { opacity:0; }
+
+
+    .story-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.story-block {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.story-block:nth-child(even) { flex-direction: row-reverse; } 
+.story-block img {
+  width:60%;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.story-block p {
+  flex: 1;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
+
+#interaction-hero .hero-media {
+  position: relative;
+  width: 100%;
+  cursor: pointer; 
+  overflow: hidden;
+}
+
+#interaction-hero .hero-media img,
+#interaction-hero .hero-media video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  transition: opacity 0.3s ease;
+}
+
+
+
   </style>
 </head>
 
@@ -148,23 +204,26 @@
 </section>
 
 
-  <div class="art-section">
-    <div class="art-title"><h1>Game intro</h1></div>
-    <div class="art-content">
-      <div class="container">
-        <p class="description">
-          Dizzilusional is a narrative puzzle game. The project focuses on the conflicts of social expectation and personal life choices.
-          Iteration of rights develops while time goes by. The myth which the game rooted from is the story of "Wuhuaka".
-          The myth is a fundamental shift point of marriage in southwestern China. Aiming to construct the connection of players' interactions
-          and the result of iteration, the project is created, highlighting environmental narrative and cultural representations.
-        </p>
-      </div>
-    </div>
-  </div>
 
   <div class="art-section">
     <div class="art-content img">
       <img src="p1Process/intro (1).png" alt="Narrative Flow Diagram" class="narrative-img" />
+    </div>
+  </div>
+
+      <div class="art-section">
+    <div class="art-title"><h1>Inspirations</h1></div>
+          <div class="container">
+        <p class="description">
+            My inspirations are mostly rooted from the urge to show the cultrual aspects of the minorities in China.
+            In this case, Kam people are my inspiration.
+            The form of game is inspired from linear narrative games like The remains of Edith Finch. 
+            Puzzles and interactions are influenced by escape-room type pf game like the Rusty Lake series.
+            
+        </p>
+      </div>
+    <div class="art-content img">
+      <img src="p1Process/nspiration.png" alt="Narrative Flow Diagram" class="narrative-img" />
     </div>
   </div>
 
@@ -175,13 +234,14 @@
         <div style="display:flex; align-items:flex-start; gap:40px; flex-wrap:wrap;">
           <div class="column" style="flex:1; min-width:280px;">
             <p class="description">
-              A mediocre researcher who is studying medicine. In her twenties, she lives in a time when peers are getting married,
-              while she is not on that track yet. Her mother pushes social expectations on her, warning of terrible endings for those
-              who do not marry.
+A mediocre researcher in her twenties who studies medicine. 
+While her peers are getting married, she isn’t on that track yet. 
+Her mother urges her to follow social expectations, warning of the terrible fate awaiting those who don’t marry.
+
+
             </p>
             <p class="description">
-              Iteration—people’s life choices evolving through time—is central to the story. The main character is from the modern world,
-              while what she tries to change belongs to the era of the myth. Two versions of the heroine were designed.
+Two versions of the heroine exist: one from the modern world and one from the mythic past. Hover to see her development.
             </p>
             <p class="description">Hover to see character development.</p>
           </div>
@@ -209,13 +269,154 @@
     </div>
   </div>
 
+  
 
-  <div class="art-section">
-    <div class="art-title"><h1>Puzzles</h1></div>
-    <div class="art-content img">
 
+<section class="art-section">
+  <div class="art-title"><h1>Narrative</h1></div>
+      <p class="description" style="text-align:center; max-width:800px; margin:0 auto 40px;">
+      A woman at a marriageable age faces social pressure. After a strange dream, 
+      she saves someone from the past and discovers the truth behind society’s 
+      false beliefs about individual choice.
+    </p>
+  
+
+  <div class="story-grid">
+    <div class="story-block">
+      <img src="p1Scene/01.png" alt="Phone lights up">
+      <p>The phone screen lights up. Messages from your mother and friend remind you of social expectations.</p>
+    </div>
+    <div class="story-block">
+      <img src="p1Scene/02.png" alt="Dream scene">
+      <p>You take your meds and fall asleep, entering a strange dream.</p>
+    </div>
+    <div class="story-block">
+      <img src="p1Scene/03.png" alt="Old room">
+      <p>Waking up in an old room, you decide to open the locked door.</p>
+    </div>
+    <div class="story-block">
+      <img src="p1Scene/04.png" alt="Mother">
+      <p>From her diary, you learn Wuhuaka escaped an arranged marriage and grew sick. 
+        Her mother dreams of her drifting away in the river.</p>
+    </div>
+
+        <div class="story-block">
+      <img src="p1Scene/05.png" alt="Village">
+      <p>You take the mother’s request and set out to find the man Wuhuaka fled with.</p>
+    </div>
+
+            <div class="story-block">
+      <img src="p1Scene/06.png" alt="Witch">
+      <p>You see the fortune teller in town. She says Wuhuaka is
+         cursed because she escaped from tradition.</p>
+    </div>
+
+                <div class="story-block">
+      <img src="p1Scene/07.png" alt="ComeBack">
+      <p>The fortune teller asks you to make an object guided by natural spirits to help Wuhuaka.
+ You bring it back, but nothing happens.
+ The mother then discovers a pattern on it and sends you to the place it depicts.</p>
+    </div>
+
+                    <div class="story-block">
+      <img src="p1Scene/08.png" alt="follow">
+      <p>Following the spirit’s guidance, you find a 
+        glowing flower that seems to hold the cure.</p>
+    </div>
+
+                        <div class="story-block">
+      <img src="p1Scene/09.png" alt="Found">
+      <p>The flower is brought to Wuhuaka. You are asked to 
+        make it into a drinkable medicine. She recovers and whispers, 
+        “Thank you.” Then, you wake up.</p>
+    </div>
+
+                        <div class="story-block">
+      <img src="p1Scene/10.png" alt="Solve">
+      <p>After returning, you search online and learn that 
+        Wuhuaka is a goddess from an old myth, who dies in
+         the original story because of people’s superstition.</p>
+    </div>
+
+    
+                        <div class="story-block">
+      <img src="p1Scene/11.png" alt="Solve">
+      <p>You begin to see the illusion behind what it means to 
+        “follow your own choice.” 
+        In the end, you decide to confront your 
+        struggle by speaking with your mother.</p>
     </div>
   </div>
+</section>
+
+
+    <div class="art-section">
+    <div class="art-title"><h1>Mechanics</h1></div>
+      <p class="Ndescription">Dialogue system was used in the game to achieve direct narration.</p>
+
+    <div class="art-content img">
+      <img src="p1Process/Dialogue.png" alt="DialogueSystem" class="narrative-img" />
+    </div>
+  </div>
+  <div class="art-section">
+        <p class="Ndescription">Click and point to interact with personal items.</p>
+  </div>
+      <div class="art-section">
+<section class="hero" id="interaction-hero">
+  <div class="hero-media">
+    <img src="p1Process/1.png" alt="Interaction preview" class="narrative-img" />
+<video src="p1Process/Demo.mp4" muted loop playsinline autoplay preload="metadata"></video>
+    </video>
+  </div>
+</section>
+
+    <div class="art-section">
+        <p class="Ndescription">Player can walk around and communicate to gather information.</p>
+  </div>
+        <div class="art-section">
+<section class="hero" id="interaction-hero">
+  <div class="hero-media">
+    <img src="01.png" alt="Interaction preview" class="Village" />
+<video src="p1Process/NPCs.mp4" muted loop playsinline autoplay preload="metadata"></video>
+
+  </div>
+</section>
+
+      <div class="art-section">
+            <div class="art-title"><h1>Puzzles</h1></div>
+                <p class="Ndescription">Puzzle designs are bsed on the cultrual products of the 
+                  setted region. Looming is one of the complex arts.
+                </p>
+<section class="hero" id="interaction-hero">
+  <div class="hero-media">
+    <img src="loom.png" alt="Interaction preview" class="narrative-img" />
+<video src="Sequencial.mp4" muted loop playsinline autoplay preload="metadata"></video>
+    </video>
+  </div>
+</section>
+
+      <div class="art-section">
+                <p class="Ndescription">Candle dye is one kind of dye that Kam people use for 
+                  saving patterns on a piece of fabric. The puzzle just monitor the process of people pouring candele
+                  on the fabric with care.
+                </p>
+<section class="hero" id="interaction-hero">
+  <div class="hero-media">
+        <img src="p1Process/finish.png" alt="Interaction preview" class="narrative-img" />
+<video src="p1Process/dye.mp4" muted loop playsinline autoplay preload="metadata"></video>
+    </video>
+
+
+      </div>
+
+
+
+
+</section>
+
+
+
+
 
   <script>
 
@@ -225,6 +426,25 @@
       container.addEventListener('mouseenter', () => video.play());
       container.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
     });
+
+
+
+  document.querySelectorAll('.media-container').forEach(container => {
+    const video = container.querySelector('video');
+    if (!video) return;
+    container.addEventListener('mouseenter', () => video.play());
+    container.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+  });
+
+
+  document.querySelectorAll('.hero .hero-media').forEach(container => {
+    const video = container.querySelector('video');
+    if (!video) return;
+    container.addEventListener('mouseenter', () => video.play());
+    container.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+    video.play().catch(()=>{}); 
+  });
+
   </script>
 </body>
 </html>
