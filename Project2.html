@@ -9,12 +9,12 @@
   <link rel="stylesheet" href="https://use.typekit.net/dbu8pdp.css">
 
   <style>
-    /* === Reset / base === */
+
     * { box-sizing: border-box; }
     html, body { height: 100%; }
     body {
       margin: 0;
-      background-color: rgb(202, 230, 255);
+      background-color: rgb(232, 244, 255);
       color: rgb(196, 161, 161);
       font-family: "Roca", serif;
       font-weight: 400;
@@ -39,15 +39,7 @@
       z-index: 9999;
     }
     * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      background-color: rgb(206, 236, 255);
-      color: rgb(196, 161, 161);
-      font-family: "Roca", serif;
-      font-weight: 400;
-      font-size: 15pt;
-    }
+
     img, video { display:block; max-width:100%; height:auto; }
 
     .logo-link {
@@ -56,7 +48,7 @@
       text-decoration: none;
       color: #39a6ff;
     }
-    .logo-link:hover { color:#439eff; text-decoration:underline; }
+    .logo-link:hover { color:#4353ff; text-decoration:underline; }
 
     .nav-links {
       display: flex;
@@ -128,6 +120,7 @@
     }
 
     .description {
+        align-items: center;
       font-size: 20px;
       line-height: 1.6;
       color: #756565;
@@ -160,6 +153,153 @@
     .media-container video { opacity:0; }
     .media-container:hover video { opacity:1; }
     .media-container:hover img { opacity:0; }
+
+
+    .mgk { padding: 32px 0; }
+.mgk .wrap {
+  width: min(2000px, 100%);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 18px;
+  align-items: start;
+}
+
+.mgk .left {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 columns */
+  grid-auto-rows: 1fr;
+  gap: 10px;
+}
+
+.mgk .thumb {
+  position: relative;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+.mgk .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.mgk .thumb:focus-visible { outline: 3px solid #39a6ff; outline-offset: 2px; }
+.mgk .thumb:hover img,
+.mgk .thumb:focus img { transform: scale(1.05); filter: contrast(1.08); }
+
+.mgk .right {
+  position: sticky; top: 80px;
+  min-height: 160px;
+  border-radius: 14px;
+  padding: 20px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: #f3f9ff;
+  border: 1px solid rgba(57,166,255,.2);
+  box-shadow: 0 6px 16px rgba(0,0,0,.05);
+  color: #356;
+}
+.mgk .right .label {
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .7;
+  margin-bottom: 6px;
+}
+.mgk .right .word {
+  font-family: "Roca", serif;
+  font-weight: 600;
+  font-size: clamp(26px, 3.2vw, 42px);
+  line-height: 1.1;
+  color: #71bfbd; 
+}
+
+.mgk .right .word2 {
+  font-family: "Roca", serif;
+  font-weight: 600;
+  font-size: clamp(26px, 3.2vw, 42px);
+  line-height: 1.1;
+  color: #71bfbd; 
+}
+
+.mechanics-hero {
+  width: 100%;
+  max-width: 1600px;
+  margin: 40px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 16 / 9;
+}
+
+.mechanics-hero .hero-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mechanics-hero img,
+.mechanics-hero video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+}
+
+.mechanics-hero video {
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+
+.mechanics-hero:hover video {
+  opacity: 1;
+}
+
+.mechanics-hero:hover img {
+  opacity: 0;
+}
+.description {
+  text-align: center;
+        font-size: 20pt;
+}
+
+
+   .story-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.story-block {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  height: 400px;
+}
+
+.story-block img {
+  max-height: 100%; 
+  width: auto;
+  border-radius: 5px;
+  object-fit: contain;
+}
+.story-block p {
+  flex: 1;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+}
   </style>
 </head>
 
@@ -174,6 +314,7 @@
   <a href="https://www.youtube.com/watch?v=wkSU7qm9beA" target="_blank" class="video-link">
     <div class="hero-media">
       <img src="P2Process/P2intro.png" alt="intro Image" />
+      <video src="P2Open.mp4" muted loop playsinline autoplay preload="metadata"></video>
     </div>
   </a>
 </section>
@@ -189,6 +330,8 @@
           , an archeaologiest of the new born species is assinged to a region to explore the cause. Eventually, through collecting and inspecting items that were 
           left behind, players will manage to find the truth...
          </p>
+
+               <img src="P2Process/GameFea.png" alt="intro Image" />
         </div> 
 
 
@@ -213,23 +356,121 @@
    </div>
     <div class="art-content">
        <p class="description"> 
-          I draw my inspirations from urbex experiences I see, Social events, and post-humanism.
-          A lot of the visual elements are from archeaologiests' percedures.
+            In this chapter, the player is placed 
+            in what used to be a human residential area.
+            Now, with humanity extinct, you, an archaeologist
+             of a new species, will explore the space.
          </p>
+  <section class="hero" id="interaction-hero">
+  <div class="hero-media">
+    <img src="p2Process/L1.png" alt="Interaction preview" class="narrative-img" />
+<video src="P2Process/process.mp4" muted loop playsinline autoplay preload="metadata"></video>
+
+  </div>
+</section>
+
+
+    <section class="mgk" id="keyword-grid">
+  <div class="wrap">
+    <div class="left" aria-label="Keyword image grid">
+
+      <button class="thumb" data-keyword="Medic" aria-label="Urbex">
+        <img src="Item/bone.png" alt="victim">
+      </button>
+
+      <button class="thumb" data-keyword="Victim" aria-label="Post-human">
+        <img src="Item/toy.png" alt="item">
+      </button>
+
+      <button class="thumb" data-keyword="Observer" aria-label="Archaeology">
+        <img src="Item/Documentery.png"alt="item">
+      </button>
+
+      <button class="thumb" data-keyword="Human activity" aria-label="Decay">
+        <img src="Item/key.png" alt="buncker">
+      </button>
+
+      <button class="thumb" data-keyword="Militarism" aria-label="Evidence">
+        <img src="Item/prop.png" alt="Evidence board">
+      </button>
+
+      <button class="thumb" data-keyword="victim" aria-label="Cycle">
+        <img src="Item/sanitary.png" alt="sanitary">
+      </button>
+    </div>
+
+
+    <div class="right" aria-live="polite">
+
+      <div class="word" id="mgkWord">Hover a tile</div>
+    </div>
+  </div>
+</section>
+
+    
          </div> 
-        </div>
+
 
                   <div class="art-section"> 
   <div class="art-title"> 
             <h1>Leve2 - Usage </h1>
    </div>
     <div class="art-content">
+
        <p class="description"> 
-          I draw my inspirations from urbex experiences I see, Social events, and post-humanism.
-          A lot of the visual elements are from archeaologiests' percedures.
+              In a abandoned lobotory, various evidence of 
+              human's destruction to the environment are found.
+              However, the result shows the resource on earth
+
          </p>
-         </div> 
-        </div>
+ </div>
+  <section class="hero" id="interaction-hero">
+  <div class="hero-media">
+    <img src="p2Process/L2.png" alt="Interaction preview" class="narrative-img" />
+<video src="P2Process/L2p.mp4" muted loop playsinline autoplay preload="metadata"></video>
+
+  </div>
+</section>
+
+
+            <section class="mgk" id="keyword-grid">
+  <div class="wrap">
+    <div class="left" aria-label="Keyword image grid">
+
+      <button class="thumb" data-keyword="Marine Organism" aria-label="Urbex">
+        <img src="Item/extinction·.png" alt="Extinction">
+      </button>
+
+      <button class="thumb" data-keyword="Plants" aria-label="Post-human">
+        <img src="Item/plant.png" alt="item">
+      </button>
+
+      <button class="thumb" data-keyword="Insects" aria-label="Archaeology">
+        <img src="Item/bee.png"alt="item">
+      </button>
+
+      <button class="thumb" data-keyword="Food" aria-label="Decay">
+        <img src="Item/choco.png" alt="buncker">
+      </button>
+
+      <button class="thumb" data-keyword="Pollution" aria-label="Evidence">
+        <img src="Item/polluted.png" alt="Evidence board">
+      </button>
+
+      <button class="thumb" data-keyword="Algea" aria-label="Cycle">
+        <img src="Item/algea.png" alt="sanitary">
+      </button>
+    </div>
+
+
+    <div class="right" aria-live="polite">
+
+      <div class="word" id="mgkWord2">Hover a tile</div>
+    </div>
+  </div>
+</section>
+
+    
 
                           <div class="art-section"> 
   <div class="art-title"> 
@@ -240,17 +481,196 @@
           I draw my inspirations from urbex experiences I see, Social events, and post-humanism.
           A lot of the visual elements are from archeaologiests' percedures.
          </p>
-         </div> 
-        </div>
+ </div>
+  <section class="hero" id="interaction-hero">
+  <div class="hero-media">
+    <img src="p2Process/L3.png" alt="Interaction preview" class="narrative-img" />
+<video src="P2Process/process (1).mp4" muted loop playsinline autoplay preload="metadata"></video>
+
+  </div>
+</section>
+
+
+            <section class="mgk" id="keyword-grid">
+  <div class="wrap">
+    <div class="left" aria-label="Keyword image grid">
+
+      <button class="thumb" data-keyword="test-tube infant" aria-label="Urbex">
+        <img src="Item/newborn.png" alt="Extinction">
+      </button>
+
+      <button class="thumb" data-keyword="Reproduction" aria-label="Post-human">
+        <img src="Item/note 1.png" alt="item">
+      </button>
+
+      <button class="thumb" data-keyword="Chemicals" aria-label="Archaeology">
+        <img src="Item/pollution.png"alt="item">
+      </button>
+    </div>
+
+
+    <div class="right" aria-live="polite">
+
+      <div class="word" id="mgkWord2">Hover a tile</div>
+    </div>
+  </div>
+</section>
+
+ </div>
+
 
 
 <div class="art-section"> 
   <div class="art-title">
-     <h1>Game  Play</h1>
+     <h1>Game  Flow</h1>
  <div class="art-content">
-
+        <img src="p2Process/GF.png" alt="Interaction preview" class="narrative-img" />
      </div>
  </div>
+
+
+ <div class="art-section">
+  <div class="art-title"><h1>Mechanics</h1></div>
+      <p class="description"> 
+          Through point-and-click interactions, the player collects items from the site.
+          As more items are gathered, additional key words become available.
+          </p>
+  <section class="mechanics-hero">
+    <div class="hero-media">
+      <img src="p2Process/L1.png">
+      <video src="P2Process/Collect.mp4" muted loop playsinline autoplay preload="metadata"></video>
+    </div>
+  </section>
+
+        <p class="description"> 
+          The cursor changes icons when hovering over an inspectable spot.
+          The player can then view information about the item and exit the inspection when finished.
+
+         </p>
+  <section class="mechanics-hero">
+    <div class="hero-media">
+      <img src="p2Process/Inspect.png">
+      <video src="P2Process/Inspect.mp4" muted loop playsinline autoplay preload="metadata"></video>
+    </div>
+  </section>
+
+                  <p class="description"> 
+                After inspection, the item can be placed into the case.
+        A key word will show up with it.
+        Put the key word into the correct gap to create a report.
+         </p>
+  <section class="mechanics-hero">
+    <div class="hero-media">
+      <img src="p2Process/P2Mechanic.png">
+      <video src="P2Process/m.mp4" muted loop playsinline autoplay preload="metadata"></video>
+    </div>
+  </section>
+
+            <p class="description"> 
+After sending the report to headquarters, the player can either proceed or redo the report.
+         </p>
+  <section class="mechanics-hero">
+    <div class="hero-media">
+      <img src="p2Process/P2M2.png">
+      <video src="P2Process/R.mp4" muted loop playsinline autoplay preload="metadata"></video>
+    </div>
+  </section>
+
+</div>
+
+
+  <div class="art-section"> 
+  <div class="art-title">
+     <h1>Narrative</h1>
+      <div class="story-grid">
+    <div class="story-block">
+      <img src="Item/bone.png" alt="Phone lights up">
+ <div class="story-text">
+      <h3>Was it war?</h3>
+      <p>In the first chapter, the 
+        player collects and inspects items pointing toward a conclusion that 
+        humanity may have gone extinct due to repeated wars throughout history.
+However, the final report reveals signs of later human activity,
+ so the headquarters lets the player continue.
+
+      </p>
+    </div>
+    </div>
+    <div class="story-block">
+      <img src="Item/extinction·.png" alt="Dream scene">
+<h3>Resource</h3>
+      <p>In this section, several clues indicate humanity’s failure to maintain sustainability and manage its resources.
+The conclusion is correct, yet nature seems to possess a far stronger self-healing ability than expected.
+The headquarters orders you to continue.
+      </p>
+    </div>
+
+    <div class="story-block">
+      <img src="Item/newborn.png" alt="Old room">
+<h3>Life Cycle</h3>
+      <p>
+       Here, you discover a production line of test-tube infants.
+A note reveals that humans had already lost the ability to reproduce. 
+They tried, and they failed.
+Over countless experiments, layers of chemical residue built up, 
+settled, and slowly reacted with the faint traces of remaining life.
+From this long accumulation, something new finally emerged.
+A new species born from the remnants of both.
+This new form of life appears to be the origin of your own kind.
+And with that, humanity quietly stepped down from the stage of history.
+The headquarters requests that you bring the sample back.
+
+      </p>
+    </div>
  
+</section>
+ </div>
+ <section class="hero" id="interaction-hero">
+  <div class="hero-media">
+    <img src="ending2.png" alt="Interaction preview" class="narrative-img" />
+<video src="ending2.mp4" muted loop playsinline autoplay preload="metadata"></video>
+
+  </div>
+</section>
+
+ 
+ <div class="art-section"> 
+  <div class="art-title">
+     <h1>Art development</h1>
+
+        <img src="P2Process/Artdevelopment.png" alt="Narrative Flow Diagram" class="Project2 inspiration" />
+        <img src="P2Process/Artdevelopment (2).png" alt="Narrative Flow Diagram" class="Project2 inspiration" />
+
+ </div>
+
+  <div class="art-section">
+    <div class="art-title"><h1>Thank you for reading!</h1></div>
+    <div class="art-content img">
+<img src="gamePage.png" alt="Ending" class="narrative-img" style="width:200px; height:auto;" />
+    </div>
+  </div>
+<script>
+document.querySelectorAll('.mgk').forEach(section => {
+
+  const wordEl = section.querySelector('.right .word'); 
+  const thumbs = section.querySelectorAll('.thumb');
+  const defaultText = wordEl.textContent;
+
+  thumbs.forEach(btn => {
+    const kw = btn.dataset.keyword || defaultText;
+    btn.addEventListener('mouseenter', () => {
+      wordEl.textContent = kw;
+    });
+    btn.addEventListener('focus', () => {
+      wordEl.textContent = kw;
+    });
+  });
+
+  section.addEventListener('mouseleave', () => {
+    wordEl.textContent = defaultText;
+  });
+
+});
+</script>
 
 </body>

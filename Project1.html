@@ -185,6 +185,73 @@
 
 
 
+
+.hover-text {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+
+.description {
+  text-align: center;
+        font-size: 20pt;
+}
+
+.transition-grid {
+  width: min(1200px, 95%);
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.t-item {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.t-item img,
+.t-item video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity .35s ease;
+}
+
+.t-item video {
+  opacity: 0;
+}
+
+.t-item:hover video {
+  opacity: 1;
+}
+
+.t-item:hover img {
+  opacity: 0;
+}
+
+.small-img {
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;  
+}
+
   </style>
 </head>
 
@@ -197,9 +264,13 @@
 
 <section class="hero">
   <a href="https://www.youtube.com/watch?v=wkSU7qm9beA" target="_blank" class="video-link">
-    <div class="hero-media">
-      <img src="p1Process/intro (2).png" alt="intro Image" />
-    </div>
+<section class="hero" id="interaction-hero">
+  <div class="hero-media">
+    <img src="p1Process/intro (2).png" alt="Interaction preview" class="narrative-img" />
+<video src="P1Open.mp4" muted loop playsinline autoplay preload="metadata"></video>
+      <span class="hover-text">Click to view on YouTube</span>
+  </div>
+</section>
   </a>
 </section>
 
@@ -226,6 +297,30 @@
       <img src="p1Process/nspiration.png" alt="Narrative Flow Diagram" class="narrative-img" />
     </div>
   </div>
+
+      <div class="art-section">
+    <div class="art-title"><h1>Concept and Visual Language</h1></div>
+          <div class="container">
+        <p class="description">
+            
+            Concept & Visual Language
+
+
+I lightly referenced motifs from the Kam people (侗族),
+whose cultural traditions often express a deep respect for natural spirits.
+Batik (蜡染) became one of the visual and puzzle references in the game.
+
+I chose the banyan motif for its associations with safety, protection,
+ and the well-being of one’s family.
+This aligns with the spirit in the story: it always intends to help, 
+but its guidance can still be interpreted differently by individuals in the environment, moreover, by players.
+        </p>
+      </div>
+<img src="p1Process/batik.jpg" 
+     class="narrative-img small-img" />
+      </div>
+
+
 
   <div class="art-section">
     <div class="art-title"><h1>Main Character</h1></div>
@@ -349,6 +444,37 @@ Two versions of the heroine exist: one from the modern world and one from the my
   </div>
 </section>
 
+      <div class="art-section">
+            <div class="art-title"><h1>Transition Animation</h1></div>
+                <p class="Ndescription">
+                  Animations are added as cutscenes for scene transition or peak of lore.
+
+                </p>
+
+                <div class="transition-grid">
+  <div class="t-item">
+    <img src="Transitions/t1.png" alt="transition frame 1">
+    <video src="Transitions/t1.mp4"  muted loop playsinline preload="metadata"></video>
+  </div>
+
+  <div class="t-item">
+    <img src="Transitions/t2.png" alt="transition frame 2">
+    <video src="Transitions/t2.mp4" muted loop playsinline preload="metadata"></video>
+  </div>
+
+  <div class="t-item">
+    <img src="Transitions/t3.png" alt="transition frame 3">
+    <video src="Transitions/t3.mp4"  muted loop playsinline preload="metadata"></video>
+  </div>
+
+  <div class="t-item">
+    <img src="Transitions/t4.png" alt="transition frame 4">
+    <video src="Transitions/t4.mp4"  muted loop playsinline preload="metadata"></video>
+  </div>
+</div>
+
+                </div>
+
 
     <div class="art-section">
     <div class="art-title"><h1>Mechanics</h1></div>
@@ -387,6 +513,15 @@ Two versions of the heroine exist: one from the modern world and one from the my
                 <p class="Ndescription">Puzzle designs are bsed on the cultrual products of the 
                   setted region. Looming is one of the complex arts.
                 </p>
+
+                <p class="Ndescription">              
+
+The loom puzzle requires players to follow a numbered clue 
+and click the colored threads in the correct sequence. Any unmarked positions
+must be woven with white thread. 
+ The solution emerges gradually as each shuttle is clicked into place.
+                </p>
+  
 <section class="hero" id="interaction-hero">
   <div class="hero-media">
     <img src="loom.png" alt="Interaction preview" class="narrative-img" />
@@ -396,7 +531,7 @@ Two versions of the heroine exist: one from the modern world and one from the my
 </section>
 
       <div class="art-section">
-                <p class="Ndescription">Candle dye is one kind of dye that Kam people use for 
+                <p class="Ndescription">Batik is one kind of dye that Kam people use for 
                   saving patterns on a piece of fabric. The puzzle just monitor the process of people pouring candele
                   on the fabric with care.
                 </p>
@@ -409,11 +544,18 @@ Two versions of the heroine exist: one from the modern world and one from the my
 
       </div>
 
-
-
-
+      </div>
 </section>
 
+
+  <div class="art-section">
+    <div class="art-title"><h1>Thank you for reading!</h1></div>
+    <div class="art-content img">
+<img src="gamePage.png" alt="Ending" class="narrative-img" style="width:200px; height:auto;" />
+    </div>
+  </div>
+
+</section>
 
 
 
@@ -445,6 +587,20 @@ Two versions of the heroine exist: one from the modern world and one from the my
     video.play().catch(()=>{}); 
   });
 
+
+  document.querySelectorAll('.t-item video').forEach(v => {
+  v.pause();
+  v.currentTime = 0;
+
+  v.parentElement.addEventListener('mouseenter', () => {
+    v.play();
+  });
+
+  v.parentElement.addEventListener('mouseleave', () => {
+    v.pause();
+    v.currentTime = 0;
+  });
+});
   </script>
 </body>
 </html>
