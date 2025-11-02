@@ -374,27 +374,39 @@
   <div class="wrap">
     <div class="left" aria-label="Keyword image grid">
 
-      <button class="thumb" data-keyword="Medic" aria-label="Urbex">
+      <button class="thumb" data-keyword="Medic"         
+      data-desc="This is a found skeleton with a name tag of a battle field medic."
+      aria-label="Urbex">
         <img src="Item/bone.png" alt="victim">
       </button>
 
-      <button class="thumb" data-keyword="Victim" aria-label="Post-human">
+      <button class="thumb" data-keyword="Victim" 
+            data-desc="A toy model of combat aircraft."
+      aria-label="Post-human">
         <img src="Item/toy.png" alt="item">
       </button>
 
-      <button class="thumb" data-keyword="Observer" aria-label="Archaeology">
+      <button class="thumb" data-keyword="Observer" 
+      data-desc="A pile of photo from a war correspodent."
+      aria-label="Archaeology">
         <img src="Item/Documentery.png"alt="item">
       </button>
 
-      <button class="thumb" data-keyword="Human activity" aria-label="Decay">
+      <button class="thumb" data-keyword="Human activity" 
+      data-desc="A key to a buncker built years after war ended. This is a representation of post-war trauma."
+      aria-label="Decay">
         <img src="Item/key.png" alt="buncker">
       </button>
 
-      <button class="thumb" data-keyword="Militarism" aria-label="Evidence">
+      <button class="thumb" data-keyword="Militarism"
+       data-desc="A recruiting flyer."
+       aria-label="Evidence">
         <img src="Item/prop.png" alt="Evidence board">
       </button>
 
-      <button class="thumb" data-keyword="victim" aria-label="Cycle">
+      <button class="thumb" data-keyword="victim" 
+      data-desc="Items belonged to comfort women."
+      aria-label="Cycle">
         <img src="Item/sanitary.png" alt="sanitary">
       </button>
     </div>
@@ -403,6 +415,7 @@
     <div class="right" aria-live="polite">
 
       <div class="word" id="mgkWord">Hover a tile</div>
+        <div class="desc" id="mgkDesc">Hover a tile to see details.</div>
     </div>
   </div>
 </section>
@@ -437,27 +450,39 @@
   <div class="wrap">
     <div class="left" aria-label="Keyword image grid">
 
-      <button class="thumb" data-keyword="Marine Organism" aria-label="Urbex">
+      <button class="thumb" data-keyword="Marine Organism" 
+      data-desc="A type of fish facing extinction because of overfishing. Inspiration are Orange Roughy."
+      aria-label="Urbex">
         <img src="Item/extinction·.png" alt="Extinction">
       </button>
 
-      <button class="thumb" data-keyword="Plants" aria-label="Post-human">
+      <button class="thumb" data-keyword="Plants" 
+      data-desc="A dead plant. An evidence of chemical soil."
+      aria-label="Post-human">
         <img src="Item/plant.png" alt="item">
       </button>
 
-      <button class="thumb" data-keyword="Insects" aria-label="Archaeology">
+      <button class="thumb" data-keyword="Insects" 
+            data-desc="A dead bee. Bee deaths because of urbanization. This is another near extincition cause by human activity."
+      aria-label="Archaeology">
         <img src="Item/bee.png"alt="item">
       </button>
 
-      <button class="thumb" data-keyword="Food" aria-label="Decay">
+      <button class="thumb" data-keyword="Food" 
+            data-desc="A demonstration of an dissapearrance of a food."
+      aria-label="Decay">
         <img src="Item/choco.png" alt="buncker">
       </button>
 
-      <button class="thumb" data-keyword="Pollution" aria-label="Evidence">
+      <button class="thumb" data-keyword="Pollution" 
+            data-desc="Pollution from chemical waste."
+      aria-label="Evidence">
         <img src="Item/polluted.png" alt="Evidence board">
       </button>
 
-      <button class="thumb" data-keyword="Algea" aria-label="Cycle">
+      <button class="thumb" data-keyword="Algea" 
+            data-desc="An algea over-growth because of fertilizing. "
+      aria-label="Cycle">
         <img src="Item/algea.png" alt="sanitary">
       </button>
     </div>
@@ -466,6 +491,7 @@
     <div class="right" aria-live="polite">
 
       <div class="word" id="mgkWord2">Hover a tile</div>
+        <div class="desc" id="mgkDesc2">Hover a tile to see details.</div>
     </div>
   </div>
 </section>
@@ -495,15 +521,21 @@
   <div class="wrap">
     <div class="left" aria-label="Keyword image grid">
 
-      <button class="thumb" data-keyword="test-tube infant" aria-label="Urbex">
+      <button class="thumb" data-keyword="test-tube infant" 
+      data-desc="Humanity's last struggle of proceeding generations."
+      aria-label="Urbex">
         <img src="Item/newborn.png" alt="Extinction">
       </button>
 
-      <button class="thumb" data-keyword="Reproduction" aria-label="Post-human">
+      <button class="thumb" data-keyword="Reproduction" 
+      data-desc="A note of documenting human's dissability in reproducting."
+      aria-label="Post-human">
         <img src="Item/note 1.png" alt="item">
       </button>
 
-      <button class="thumb" data-keyword="Chemicals" aria-label="Archaeology">
+      <button class="thumb" data-keyword="Chemicals" 
+      data-desc="The chemical that creates a new species."
+      aria-label="Archaeology">
         <img src="Item/pollution.png"alt="item">
       </button>
     </div>
@@ -512,6 +544,7 @@
     <div class="right" aria-live="polite">
 
       <div class="word" id="mgkWord2">Hover a tile</div>
+        <div class="desc" id="mgkDesc2">Hover a tile to see details.</div>
     </div>
   </div>
 </section>
@@ -651,25 +684,32 @@ The headquarters requests that you bring the sample back.
   </div>
 <script>
 document.querySelectorAll('.mgk').forEach(section => {
+  // 兼容 .word 或 .word2
+  const wordEl = section.querySelector('.right .word, .right .word2');
+  const descEl = section.querySelector('.right .desc');
+  if (!wordEl || !descEl) return;
 
-  const wordEl = section.querySelector('.right .word'); 
   const thumbs = section.querySelectorAll('.thumb');
-  const defaultText = wordEl.textContent;
+  const defaultWord = wordEl.textContent || 'Hover a tile';
+  const defaultDesc = descEl.textContent || 'Hover a tile to see details.';
 
   thumbs.forEach(btn => {
-    const kw = btn.dataset.keyword || defaultText;
-    btn.addEventListener('mouseenter', () => {
+    const kw = btn.dataset.keyword || defaultWord;
+    const dc = btn.dataset.desc || defaultDesc;
+
+    const setTexts = () => {
       wordEl.textContent = kw;
-    });
-    btn.addEventListener('focus', () => {
-      wordEl.textContent = kw;
-    });
+      descEl.textContent = dc;
+    };
+
+    btn.addEventListener('mouseenter', setTexts);
+    btn.addEventListener('focus', setTexts);
   });
 
   section.addEventListener('mouseleave', () => {
-    wordEl.textContent = defaultText;
+    wordEl.textContent = defaultWord;
+    descEl.textContent = defaultDesc;
   });
-
 });
 </script>
 

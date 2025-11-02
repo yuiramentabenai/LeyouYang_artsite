@@ -209,6 +209,65 @@
 }
 
 
+.mechanics-grid {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* 外框：固定比例，统一大小 */
+.m-card {
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* ✅ 每个框一样大，你可改成 4/3 或 1/1 */
+  position: relative;
+  overflow: hidden;       /* ✅ 按比例裁剪内部，不溢出 */
+  background: #00000010;  /* 可删，用来对齐视觉效果 */
+  border-radius: 8px;
+}
+
+/* 图片和视频叠在完全一样的框里 */
+.m-card .media {
+  position: absolute;
+  inset: 0;
+}
+
+/* 图片：等比缩放、填满框，但不裁切 */
+.m-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* ✅ 填满外框（如果你想不裁切可以用 contain） */
+}
+
+/* 视频：覆盖图片，但默认透明 */
+.m-card video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* ✅ 和图片一样大 */
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: none;
+}
+
+/* hover 显示视频 */
+.m-card:hover video {
+  opacity: 1;
+}
+
+.m-title {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #6d8550;   /* 和你页面绿色系一致 */
+  text-align: center;
+  font-family: "Roca", serif;
+}
 
   </style>
 </head>
@@ -221,7 +280,7 @@
   
 <section class="hero">
   <a href="https://www.youtube.com/watch?v=ktlQQZLOw7Q&t=5s" target="_blank" class="video-link">
-<section class="hero" id="interaction-hero">
+
   <div class="hero-media">
     <img src="TaleIntro.png" alt="Interaction preview" class="narrative-img" />
 <video src="p3Intro.mp4" muted loop playsinline autoplay preload="metadata"></video>
@@ -236,9 +295,8 @@
    </div>
     <div class="art-content">
        <p class="description"> 
-          This project is a a point-and-click, text-based puzzle game which players will be the protagonist of the story. In an era that decades after human extincted
-          , an archeaologiest of the new born species is assinged to a region to explore the cause. Eventually, through collecting and inspecting items that were 
-          left behind, players will manage to find the truth...
+              Tale is a game in which players 
+              accompany the protagonist through an unusual village and use her special ability to solve various puzzles. 
          </p>
         </div> 
 
@@ -253,9 +311,8 @@
    </div>
     <div class="art-content">
        <p class="description"> 
-          This project is a a point-and-click, text-based puzzle game which players will be the protagonist of the story. In an era that decades after human extincted
-          , an archeaologiest of the new born species is assinged to a region to explore the cause. Eventually, through collecting and inspecting items that were 
-          left behind, players will manage to find the truth...
+          I took inspirations of the combination of side-scrolling and narrative from Undertale and Planet of Lana.
+          Visual and cultrual elements of this game are also from rural minority culture in China.
          </p>
         </div> 
     <img src="P3/insp.png" alt="Interaction preview" class="narrative-img" />
@@ -268,6 +325,11 @@
    </div>
     <div class="art-content">
        <p class="description"> 
+  The protagonist first appears in the story as an abandoned infant, found with a strange stone beside her.
+No one in the village wants to take her in, since girls in rural communities are often seen as less valuable than boys, who can contribute more to farm work.
+Still, the villagers raise her together. But as she grows older, they decide to sell her into marriage for profit.
+On the day of the wedding, the stone slips from her hand and falls into a deep hole. So she jumps in after it..
+          
 
 
          </p>
@@ -283,7 +345,11 @@
     <div class="art-content">
       <h3>Level 1 </h3>
        <p class="description"> 
-            Wakes up in a strange place.
+            She wakes up in a strange place.
+This chapter introduces her ability for the first time. She realizes that the stone she has carried all her life holds a powerful force in this unfamiliar world.
+
+With its power, players can melt ice and use a small boat to cross the river.
+A tree can also grow under the stone’s warmth, creating a path that allows her to climb up the riverbank.
 
          </p>
 
@@ -292,7 +358,13 @@
         <div class="art-content">
                   <h3>Level 2 </h3>
        <p class="description"> 
-            Wakes up in a strange place.
+She enters a village where all the residents are animals.
+Players must help the protagonist find her way, complete 
+the villagers’ requests, and use her power to create safe routes that allow her to escape the area.
+
+Along the way, players gradually learn about the environment 
+and discover that the village is ruled by a predator that only appears at night.
+This makes her time-shifting stone even more valuable.
 
          </p>
                       <img src="P3/2.png" alt="Interaction preview" class="narrative-img" />
@@ -301,7 +373,10 @@
           <div class="art-content">
                   <h3>Level 3 </h3>
        <p class="description"> 
-            Wakes up in a strange place.
+Inside a cave filled with darkness, the 
+player must rescue several predators that have been captured.
+Here, the fire-creating power introduced in the previous chapters 
+becomes essential, allowing the player to clear obstacles and break a way out.
 
          </p>
                       <img src="P3/3.png" alt="Interaction preview" class="narrative-img" />
@@ -315,82 +390,126 @@
    </div>
     <div class="art-content">
        <p class="description"> 
-
+            Various mechanics are used in this game to solve small puzzles.
 
          </p>
         </div> 
 
 
-    <section class="hero">
+<div class="mechanics-grid">
 
-<section class="hero" id="interaction-hero">
-  <div class="hero-media">
-    <img src="P3/growth.png" alt="Interaction preview" class="narrative-img" />
-<video src="P3/Growth.mp4" muted loop playsinline autoplay preload="metadata"></video>
+  <div>
+    <div class="m-card">
+      <div class="media">
+        <img src="P3/growth.png" alt="">
+        <video src="P3/Growth.mp4" muted loop playsinline autoplay></video>
+      </div>
+    </div>
+    <div class="m-title">Growth: the warm power during daytime allow plants to grow.</div>
   </div>
-</section>
-</section>
-      </section>
-        <section class="hero">
 
-<section class="hero" id="interaction-hero">
-  <div class="hero-media">
-    <img src="P3/death.png" alt="Interaction preview" class="narrative-img" />
-<video src="P3/death.mp4" muted loop playsinline autoplay preload="metadata"></video>
+  <div>
+    <div class="m-card">
+      <div class="media">
+        <img src="P3/death.png" alt="">
+        <video src="P3/death.mp4" muted loop playsinline autoplay></video>
+      </div>
+    </div>
+    <div class="m-title">Decay: Accelerte aging of a plant.</div>
   </div>
-</section>
-</section>
-      </section>
 
-        <section class="hero">
-
-<section class="hero" id="interaction-hero">
-  <div class="hero-media">
-    <img src="P3/fire.png" alt="Interaction preview" class="narrative-img" />
-<video src="P3/fire.mp4" muted loop playsinline autoplay preload="metadata"></video>
+  <div>
+    <div class="m-card">
+      <div class="media">
+        <img src="P3/fire.png" alt="">
+        <video src="P3/fire.mp4" muted loop playsinline autoplay></video>
+      </div>
+    </div>
+    <div class="m-title">Fire: set things on fire.</div>
   </div>
-</section>
-</section>
-      </section>
 
-
-
-
-        <section class="hero">
-
-<section class="hero" id="interaction-hero">
-  <div class="hero-media">
-    <img src="P3/place.png" alt="Interaction preview" class="narrative-img" />
-<video src="P3/Place.mp4" muted loop playsinline autoplay preload="metadata"></video>
+  <div>
+    <div class="m-card">
+      <div class="media">
+        <img src="P3/place.png" alt="">
+        <video src="P3/Place.mp4" muted loop playsinline autoplay></video>
+      </div>
+    </div>
+    <div class="m-title">Place Item: Pressed 'X' to place item.</div>
   </div>
-</section>
-</section>
-      </section>
 
-
-        <section class="hero">
-
-<section class="hero" id="interaction-hero">
-  <div class="hero-media">
-    <img src="P3/ice.png" alt="Interaction preview" class="narrative-img" />
-<video src="P3/ice.mp4" muted loop playsinline autoplay preload="metadata"></video>
+  <div>
+    <div class="m-card">
+      <div class="media">
+        <img src="P3/ice.png" alt="">
+        <video src="P3/ice.mp4" muted loop playsinline autoplay></video>
+      </div>
+    </div>
+    <div class="m-title">Ice: Use cold power in nightitme allow player to freeze water.</div>
   </div>
-</section>
-</section>
-      </section>
 
-      
-        <section class="hero">
-
-<section class="hero" id="interaction-hero">
-  <div class="hero-media">
-    <img src="P3/melt.png" alt="Interaction preview" class="narrative-img" />
-<video src="P3/melt.mp4" muted loop playsinline autoplay preload="metadata"></video>
+  <div>
+    <div class="m-card">
+      <div class="media">
+        <img src="P3/melt.png" alt="">
+        <video src="P3/melt.mp4" muted loop playsinline autoplay></video>
+      </div>
+    </div>
+    <div class="m-title">Melt: use warm power in daytime allow player to melt ice.</div>
   </div>
-</section>
-</section>
-      </section>
+
+</div>
+
+  <div class="art-section">
+    <div class="art-title"><h1>Thank you for reading!</h1></div>
+    <div class="art-content img">
+<img src="gamePage.png" alt="Ending" class="narrative-img" style="width:200px; height:auto;" />
+    </div>
+  </div>
+ <script>
+
+    document.querySelectorAll('.media-container').forEach(container => {
+      const video = container.querySelector('video');
+      if (!video) return;
+      container.addEventListener('mouseenter', () => video.play());
+      container.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+    });
 
 
-      
+
+  document.querySelectorAll('.media-container').forEach(container => {
+    const video = container.querySelector('video');
+    if (!video) return;
+    container.addEventListener('mouseenter', () => video.play());
+    container.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+  });
+
+
+  document.querySelectorAll('.hero .hero-media').forEach(container => {
+    const video = container.querySelector('video');
+    if (!video) return;
+    container.addEventListener('mouseenter', () => video.play());
+    container.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+    video.play().catch(()=>{}); 
+  });
+
+
+  document.querySelectorAll('.t-item video').forEach(v => {
+  v.pause();
+  v.currentTime = 0;
+
+  v.parentElement.addEventListener('mouseenter', () => {
+    v.play();
+  });
+
+  v.parentElement.addEventListener('mouseleave', () => {
+    v.pause();
+    v.currentTime = 0;
+  });
+});
+  </script>
 </body>
+
+
+
+</html>
