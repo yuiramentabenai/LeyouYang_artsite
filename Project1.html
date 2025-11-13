@@ -23,23 +23,16 @@
       font-size: 15pt;
     }
     img, video { display:block; max-width:100%; height:auto; }
-
-    .logo-link {
-      font-family: "Roca", Regular;
-      font-size: 25px;
-      text-decoration: none;
-      color: #e35011;
-    }
+.logo-link {
+  font-family: "Roca", serif;
+  font-size: 25px;
+  text-decoration: none;
+  color: #e35011;
+  position: static; 
+}
     .logo-link:hover { color:#439eff; text-decoration:underline; }
 
-    .nav-links {
-      display: flex;
-      gap: 50px;
-      position: fixed;
-      top: 20px;
-      left: 30px;
-      z-index: 9999;
-    }
+
 
 .hero {
   position: relative;
@@ -147,11 +140,13 @@
   max-width: 1000px;
   margin: 0 auto;
 }
+
 .story-block {
   display: flex;
   align-items: center;
   gap: 30px;
 }
+
 .story-block:nth-child(even) { flex-direction: row-reverse; } 
 .story-block img {
   width:60%;
@@ -252,17 +247,87 @@
   display: block;  
 }
 
+
+#top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgb(230, 255, 206);  /* 与你的背景颜色一致，可改 */
+  padding: 10px 0 15px;
+  z-index: 9999;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav-links {
+  display: flex;
+  gap: 50px;
+  justify-content: flex-start;
+  padding-left: 40px;
+  margin-bottom: 10px;   /* 和下面一行索引的间距 */
+}
+
+.logo-link {
+  font-family: "Roca", serif;
+  font-size: 25px;
+  color: #e35011;
+  text-decoration: none;
+}
+
+/* 第二行索引：自动跟在后面 */
+.category-nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding-top: 5px;
+}
+
+.category-link {
+  font-family: "Roca", serif;
+  font-size: 20px;
+  text-decoration: none;
+  color: #6d8550;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 3px;
+  transition: 0.2s;
+}
+
+.category-link:hover {
+  color: #4f6f4f;
+  border-bottom-color: #4f6f4f;
+}
+
+/* 把内容往下推，不让导航挡住 */
+body {
+  padding-top: 160px;
+}
   </style>
 </head>
 
 <body>
-
+<div id="top-nav">
   <div class="nav-links">
     <a href="index.html" class="logo-link">Home</a>
     <a href="GamePage.html" class="logo-link">Game projects</a>
   </div>
+  
+<div class="category-nav">
+      <a href="#youtube" class="category-link">Video</a>
+    <a href="#opening" class="category-link">Game Overview</a>
+  <a href="#inspirations" class="category-link">Inspirations</a>
+  <a href="#concept" class="category-link">Concept</a>
+  <a href="#character" class="category-link">Main Character</a>
+  <a href="#flow" class="category-link">Game Flow</a>
+  <a href="#narrative" class="category-link">Narrative</a>
+  <a href="#transition" class="category-link">Transitions</a>
+  <a href="#mechanics" class="category-link">Mechanics</a>
+  <a href="#puzzles" class="category-link">Puzzles</a>
+  <a href="#artdev" class="category-link">Art Dev</a>
+</div>
+  
+</div>
 
-<section class="hero">
+<section class="hero" id="youtube">
   <a href="https://www.youtube.com/watch?v=wkSU7qm9beA" target="_blank" class="video-link">
 <section class="hero" id="interaction-hero">
   <div class="hero-media">
@@ -276,13 +341,12 @@
 
 
 
-  <div class="art-section">
+  <div class="art-section" id="opening">
     <div class="art-content img">
       <img src="p1Process/intro (1).png" alt="Narrative Flow Diagram" class="narrative-img" />
     </div>
   </div>
-
-      <div class="art-section">
+<div class="art-section" id="inspirations">
     <div class="art-title"><h1>Inspirations</h1></div>
           <div class="container">
         <p class="description">
@@ -297,7 +361,9 @@
       <img src="p1Process/nspiration.png" alt="Narrative Flow Diagram" class="narrative-img" />
     </div>
   </div>
+</div>
 
+<div class="art-section" id="concept">
       <div class="art-section">
     <div class="art-title"><h1>Concept and Visual Language</h1></div>
           <div class="container">
@@ -319,9 +385,9 @@ but its guidance can still be interpreted differently by individuals in the envi
 <img src="p1Process/batik.jpg" 
      class="narrative-img small-img" />
       </div>
+      </div>
 
-
-
+<div class="art-section" id="character">
   <div class="art-section">
     <div class="art-title"><h1>Main Character</h1></div>
     <div class="art-content">
@@ -356,18 +422,20 @@ Two versions of the heroine exist: one from the modern world and one from the my
       </div>
     </div>
   </div>
+</div>
 
+<div class="art-section" id="flow">
   <div class="art-section">
     <div class="art-title"><h1>Game Flow</h1></div>
     <div class="art-content img">
       <img src="p1gameFlow.png" alt="Narrative Flow Diagram" class="narrative-img" />
     </div>
   </div>
-
+</div>
   
 
 
-<section class="art-section">
+<section class="art-section" id="narrative">
   <div class="art-title"><h1>Narrative</h1></div>
       <p class="description" style="text-align:center; max-width:800px; margin:0 auto 40px;">
       A woman at a marriageable age faces social pressure. After a strange dream, 
@@ -444,7 +512,7 @@ Two versions of the heroine exist: one from the modern world and one from the my
   </div>
 </section>
 
-      <div class="art-section">
+      <div class="art-section" id="transition">
             <div class="art-title"><h1>Transition Animation</h1></div>
                 <p class="Ndescription">
                   Animations are added as cutscenes for scene transition or peak of lore.
@@ -476,7 +544,7 @@ Two versions of the heroine exist: one from the modern world and one from the my
                 </div>
 
 
-    <div class="art-section">
+    <div class="art-section" id="mechanics">
     <div class="art-title"><h1>Mechanics</h1></div>
       <p class="Ndescription">Dialogue system was used in the game to achieve direct narration.</p>
 
@@ -490,7 +558,7 @@ Two versions of the heroine exist: one from the modern world and one from the my
       <div class="art-section">
 <section class="hero" id="interaction-hero">
   <div class="hero-media">
-    <img src="p1Process/1.png" alt="Interaction preview" class="narrative-img" />
+    <img src="p1Process/Point.png" alt="Interaction preview" class="narrative-img" />
 <video src="p1Process/Demo.mp4" muted loop playsinline autoplay preload="metadata"></video>
     </video>
   </div>
@@ -502,13 +570,23 @@ Two versions of the heroine exist: one from the modern world and one from the my
         <div class="art-section">
 <section class="hero" id="interaction-hero">
   <div class="hero-media">
-    <img src="01.png" alt="Interaction preview" class="Village" />
+    <img src="p1Process/walk.png" alt="Interaction preview" class="Village" />
 <video src="p1Process/NPCs.mp4" muted loop playsinline autoplay preload="metadata"></video>
 
   </div>
 </section>
 
-      <div class="art-section">
+<div class="art-section">
+        <p class="Ndescription">Player can walk around and communicate to gather information.</p>
+  </div>
+        <div class="art-section">
+
+    <img src="p1Process/Instruction.png" alt="Interaction preview" class="Village" />
+
+  </div>
+</section>
+
+      <div class="art-section" id="puzzles">
             <div class="art-title"><h1>Puzzles</h1></div>
                 <p class="Ndescription">Puzzle designs are bsed on the cultrual products of the 
                   setted region. Looming is one of the complex arts.
@@ -524,7 +602,7 @@ must be woven with white thread.
   
 <section class="hero" id="interaction-hero">
   <div class="hero-media">
-    <img src="loom.png" alt="Interaction preview" class="narrative-img" />
+    <img src="p1Process/loom.png" alt="Interaction preview" class="narrative-img" />
 <video src="Sequencial.mp4" muted loop playsinline autoplay preload="metadata"></video>
     </video>
   </div>
@@ -537,16 +615,39 @@ must be woven with white thread.
                 </p>
 <section class="hero" id="interaction-hero">
   <div class="hero-media">
-        <img src="p1Process/finish.png" alt="Interaction preview" class="narrative-img" />
+        <img src="p1Process/15.png" alt="Interaction preview" class="narrative-img" />
 <video src="p1Process/dye.mp4" muted loop playsinline autoplay preload="metadata"></video>
     </video>
-
-
       </div>
 
+
+    
       </div>
+
+
+
+            <div class="art-section">
+                <p class="Ndescription">Batik is one kind of dye that Kam people use for 
+                  saving patterns on a piece of fabric. The puzzle just monitor the process of people pouring candele
+                  on the fabric with care.
+                </p>
+<section class="hero" id="interaction-hero">
+  <div class="hero-media">
+        <img src="p1Process/Chest.png" alt="Interaction preview" class="narrative-img" />
+<video src="p1Process/chest.mp4" muted loop playsinline autoplay preload="metadata"></video>
+    </video>
+      </div>
+
+
+      
 </section>
+ <div class="art-section" id="artdev"> 
+  <div class="art-title">
+     <h1>Art development</h1>
 
+        <img src="p1Process/Art.png" alt="Narrative Flow Diagram" class="Project2 inspiration" />
+    
+ </div>
 
   <div class="art-section">
     <div class="art-title"><h1>Thank you for reading!</h1></div>
@@ -556,6 +657,8 @@ must be woven with white thread.
   </div>
 
 </section>
+
+
 
 
 

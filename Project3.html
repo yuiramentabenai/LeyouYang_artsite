@@ -9,276 +9,450 @@
   <link rel="stylesheet" href="https://use.typekit.net/dbu8pdp.css">
 
   <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: rgb(255, 255, 231);
+    color: rgb(196, 161, 161);
+    font-family: "Roca", serif;
+    font-weight: 400;
+    font-size: 15pt;
+    text-align: center;
+  }
+
+  img,
+  video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+
+
+
+
+
+  #top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+    background-color: rgb(255, 255, 231);
+      padding: 10px 0 15px;
+      z-index: 9999;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
 
     
-
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      background-color: rgb(255, 255, 231);
-      color: rgb(196, 161, 161);
-      font-family: "Roca", serif;
-      font-weight: 400;
-      font-size: 15pt;
-        text-align: center;
-    }
-    img, video { display:block; max-width:100%; height:auto; }
-
-    .logo-link {
-      font-family: "Roca", Regular;
-      font-size: 25px;
-      text-decoration: none;
-      color: #a0a800;
-    }
-    .logo-link:hover { color:#ff6243; text-decoration:underline; }
-
     .nav-links {
       display: flex;
       gap: 50px;
-      position: fixed;
-      top: 20px;
-      left: 30px;
-      z-index: 9999;
+      justify-content: flex-start;
+      padding-left: 40px;
+      margin-bottom: 10px;
     }
 
-.hero {
-  position: relative;
-  height: 90vh; 
-  overflow: hidden;
-  width: 100%;
-  margin-top: 60px;
-}
-    .hero .video-link { position:relative; display:block; width:100%; height:100%; }
-    .hero .hero-media { position:relative; width:100%; height:100%; }
-    .hero .hero-media img,
-    .hero .hero-media video {
-      position:absolute; inset:0;
-      width:100%; height:100%;
-      object-fit:cover;
-      border-radius:0;
-    }
-    .hero .hero-media video { opacity:0; transition:opacity .3s ease; }
-    .hero .hero-media:hover video { opacity:1; }
-:root { --edge: 40px; }
-
-.art-section {
-  width: 92%; 
-  max-width: 1600px;
-  margin: 0 auto; 
-  padding: 40px 0;
-  background: transparent;
-}
-
-.art-title {
-  text-align: center;
-}
-.art-title h1 {
-  display: inline-block;
-  font-size: 70px;
-  color: #98d15f; 
-}
-.art-content {
-  width: 100%;
-  margin: 0 auto;
-}
-
-
-.art-content.img img,
-.narrative-img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 0;
-  margin: 0 auto;
-}
-    .container {
-      width: min(1100px, 100%);
-      margin: 0 auto;
-      padding: 0 24px;
+    .logo-link {
+      font-family: "Roca", serif;
+      font-size: 25px;
+    color: #a0a800;
+      text-decoration: none;
     }
 
-    .description {
+    .logo-link:hover {
+    color: #ff6243;
+      text-decoration:underline;
+    }
+
+   
+    .category-nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding-top: 5px;
+    }
+
+    .category-link {
+      font-family: "Roca", serif;
       font-size: 20px;
-      line-height: 1.6;
-      color: #756565;
+      text-decoration: none;
+      color: #82ba58;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 3px;
+      transition: 0.2s;
     }
 
-        .Ndescription {
-      font-size: 30px;
-        align-items: center;
-      line-height: 1.6;
-      color: #6d8550;
+    .category-link:hover {
+      color: #4f6f4f;
+      border-bottom-color: #4f6f4f;
     }
 
-   .media-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  flex-wrap: nowrap;
-  margin-top: 10px;
+  .hero {
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 60px;
+  }
+
+  .hero .video-link {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero .hero-media {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero .hero-media img,
+  .hero .hero-media video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+  }
+
+  .hero .hero-media video {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .hero .hero-media:hover video {
+    opacity: 1;
+  }
+
+  :root {
+    --edge: 40px;
+  }
+
+
+  .art-section {
+    width: 92%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 40px 0;
+    background: transparent;
+  }
+
+  .art-title {
+    text-align: center;
+  }
+
+  .art-title h1 {
+    display: inline-block;
+    font-size: 70px;
+    color: #98d15f;
+  }
+
+  .art-content {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .art-content.img img,
+  .narrative-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    margin: 0 auto;
+  }
+
+  .container {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+
+  .description {
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #756565;
+  }
+
+  .Ndescription {
+    font-size: 30px;
+    line-height: 1.6;
+    color: #6d8550;
+  }
+
+
+  .media-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 80px;
+    margin: 40px auto; 
+    max-width: 1200px;
+  }
+
+  .media-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
+.media-container.small {
+  flex: 0 0 auto;
+  width: 320px; 
+  aspect-ratio: 4 / 5;
+
+
 }
 
-.media-container {
-  flex: 1 1 45%;
-  aspect-ratio: 4/5;
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  cursor: pointer;
-}
-    .media-container img,
-    .media-container video {
-      position:absolute; inset:0;
-      width:100%; height:100%;
-      object-fit:cover;
-      border-radius:12px;
-      transition: opacity .3s ease;
-    }
-    .media-container video { opacity:0; }
-    .media-container:hover video { opacity:1; }
-    .media-container:hover img { opacity:0; }
+  .media-container img,
+  .media-container video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+    transition: opacity 0.25s ease;
+  }
+
+  .media-container .still {
+    opacity: 1;
+  }
+
+  .media-container .gif {
+    opacity: 0;
+  }
+
+  .media-container:hover .still {
+    opacity: 0;
+  }
+
+  .media-container:hover .gif {
+    opacity: 1;
+  }
 
 
-    .story-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.story-block {
+  .story-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .story-block {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .story-block:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .story-block img {
+    width: 60%;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .story-block p {
+    flex: 1;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  #interaction-hero .hero-media {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  #interaction-hero .hero-media img,
+  #interaction-hero .hero-media video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .hover-text {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .mechanics-grid {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .m-card {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    overflow: hidden;
+    background: #00000010;
+    border-radius: 8px;
+  }
+
+  .m-card .media {
+    position: absolute;
+    inset: 0;
+  }
+
+  .m-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .m-card video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .m-card:hover video {
+    opacity: 1;
+  }
+
+  .m-title {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #6d8550;
+    text-align: center;
+    font-family: "Roca", serif;
+  }
+
+.level-detail-row {
   display: flex;
   align-items: center;
   gap: 30px;
+  margin: 40px auto;
+  max-width: 1100px;
 }
-.story-block:nth-child(even) { flex-direction: row-reverse; } 
-.story-block img {
-  width:60%;
-  border-radius: 5px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+.level-detail-row img {
+  width: 45%;
+  max-width: 480px;
+  height: auto;
+  border-radius: 6px;
 }
-.story-block p {
+
+.level-detail-text {
   flex: 1;
+  text-align: left;
   font-size: 18px;
   line-height: 1.6;
   color: #555;
 }
 
-#interaction-hero .hero-media {
+.level-detail-text h4 {
+  margin: 0 0 10px;
+  color: #6d8550;
+}
+.level-detail-img {
   position: relative;
-  width: 100%;
-  cursor: pointer; 
-  overflow: hidden;
+  width: 45%;
+  max-width: 480px;
+  cursor: pointer;
 }
 
-#interaction-hero .hero-media img,
-#interaction-hero .hero-media video {
+.level-detail-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+
+/* 默认图 */
+.level-detail-img .still {
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+/* hover 时显示的图 */
+.level-detail-img .hover {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0;
-  transition: opacity 0.3s ease;
-}
-
-
-
-
-.hover-text {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 14px;
   opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
+  transition: opacity 0.25s ease;
 }
 
-
-.description {
-  text-align: center;
-        font-size: 20pt;
-}
-
-
-.mechanics-grid {
-  width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-}
-
-/* 外框：固定比例，统一大小 */
-.m-card {
-  width: 100%;
-  aspect-ratio: 16 / 9;   /* ✅ 每个框一样大，你可改成 4/3 或 1/1 */
-  position: relative;
-  overflow: hidden;       /* ✅ 按比例裁剪内部，不溢出 */
-  background: #00000010;  /* 可删，用来对齐视觉效果 */
-  border-radius: 8px;
-}
-
-/* 图片和视频叠在完全一样的框里 */
-.m-card .media {
-  position: absolute;
-  inset: 0;
-}
-
-/* 图片：等比缩放、填满框，但不裁切 */
-.m-card img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;  /* ✅ 填满外框（如果你想不裁切可以用 contain） */
-}
-
-/* 视频：覆盖图片，但默认透明 */
-.m-card video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;  /* ✅ 和图片一样大 */
+.level-detail-img:hover .still {
   opacity: 0;
-  transition: opacity .3s ease;
-  pointer-events: none;
 }
 
-/* hover 显示视频 */
-.m-card:hover video {
+.level-detail-img:hover .hover {
   opacity: 1;
 }
 
-.m-title {
-  margin-top: 10px;
-  font-size: 20px;
-  font-weight: 600;
-  color: #6d8550;   /* 和你页面绿色系一致 */
-  text-align: center;
-  font-family: "Roca", serif;
-}
 
-  </style>
+</style>
 </head>
 
+
+  <div id="top-nav">
   <div class="nav-links">
     <a href="index.html" class="logo-link">Home</a>
     <a href="GamePage.html" class="logo-link">Game projects</a>
   </div>
+    <div class="category-nav">
+      <a href="#youtube" class="category-link">Video</a>
+      <a href="#opening" class="category-link">Game Overview</a>
+      <a href="#inspirations" class="category-link">Inspirations</a>
+      <a href="#levels" class="category-link">Levels</a>
+      <a href="#mechanics" class="category-link">Mechanics</a>
+      <a href="#artdev" class="category-link">Art Dev</a>
+    </div>
+  </div>
 
   
-<section class="hero">
+<section class="hero" id="youtube">
   <a href="https://www.youtube.com/watch?v=ktlQQZLOw7Q&t=5s" target="_blank" class="video-link">
 
   <div class="hero-media">
@@ -289,7 +463,7 @@
   </a>
 </section>
 
-<div class="art-section"> 
+<div class="art-section" id="opening"> 
   <div class="art-title"> 
     <h1>Game intro</h1>
    </div>
@@ -305,7 +479,7 @@
 
       </section>
 
-    <div class="art-section"> 
+    <div class="art-section" id="inspirations"> 
   <div class="art-title"> 
     <h1>Inspirations</h1>
    </div>
@@ -319,7 +493,7 @@
       </section>
 
 
-    <div class="art-section"> 
+    <div class="art-section" id="character"> 
   <div class="art-title"> 
     <h1>Character</h1>
    </div>
@@ -329,16 +503,38 @@
 No one in the village wants to take her in, since girls in rural communities are often seen as less valuable than boys, who can contribute more to farm work.
 Still, the villagers raise her together. But as she grows older, they decide to sell her into marriage for profit.
 On the day of the wedding, the stone slips from her hand and falls into a deep hole. So she jumps in after it..
-          
-
 
          </p>
         </div> 
     <img src="P3/c1.jpg" alt="Interaction preview" class="narrative-img" />
-      </section>
 
+        <img src="P3/other.png" alt="Interaction preview" class="narrative-img" />
+
+
+
+
+        <h3>Animation</h3>
+
+<div class="media-row" style="flex:1; flex-wrap:wrap;">
+
+  <div class="media-container small">
+    <img class="still" src="P3/npcAni (1).png" alt="Character Still 1" />
+    <img class="gif" src="P3/tic.gif" alt="Character Walk GIF" />
+  </div>
+
+  <div class="media-container small">
+    <img class="still" src="P3/Stand.png" alt="Character Still 2" />
+    <img class="gif" src="P3/walk.gif" alt="Character Idle GIF" />
+  </div>
+
+  <div class="media-container small">
+    <img class="still" src="P3/enemy.png" alt="Character Still 3" />
+    <img class="gif" src="P3/fly.gif" alt="Character Idle GIF" />
+  </div>
+
+</div>
       
-    <div class="art-section"> 
+    <div class="art-section" id="levels"> 
   <div class="art-title"> 
     <h1>Levels</h1>
    </div>
@@ -354,6 +550,46 @@ A tree can also grow under the stone’s warmth, creating a path that allows her
          </p>
 
     <img src="P3/1.png" alt="Interaction preview" class="narrative-img" />
+
+     <img src="P3/graph (1).png" alt="Interaction preview" class="narrative-img" />
+
+
+<div class="level-detail-row">
+  
+
+  <div class="level-detail-img">
+    <img class="still" src="P3/l11 (1).png" alt="">
+    <img class="hover" src="P3/l11 (2).png" alt="">
+  </div>
+
+  <div class="level-detail-text">
+    <h4>Use mechanic</h4>
+    <p>
+      The stone's warmth allows ice to melt so that player can go through.
+    </p>
+  </div>
+
+</div>
+
+
+<div class="level-detail-row">
+  
+
+  <div class="level-detail-img">
+    <img class="still" src="P3/l11 (3).png" alt="">
+    <img class="hover" src="P3/l11 (4).png" alt="">
+  </div>
+
+  <div class="level-detail-text">
+    <h4>Use mechanic</h4>
+    <p>
+      The stone's warmth allows plants to grow, forming platforms the player can climb.
+    </p>
+  </div>
+
+</div>
+
+</div>
         </div> 
         <div class="art-content">
                   <h3>Level 2 </h3>
@@ -368,6 +604,97 @@ This makes her time-shifting stone even more valuable.
 
          </p>
                       <img src="P3/2.png" alt="Interaction preview" class="narrative-img" />
+
+                           <img src="P3/graph (3).png" alt="Interaction preview" class="narrative-img" />
+
+                           
+<div class="level-detail-row">
+  
+
+  <div class="level-detail-img">
+    <img class="still" src="P3/l21 (2).png" alt="">
+    <img class="hover" src="P3/l21 (1).png" alt="">
+  </div>
+
+  <div class="level-detail-text">
+    <h4>Dialogue</h4>
+    <p>
+      Talk to the villagers to find the way out.
+    </p>
+  </div>
+
+</div>
+
+<div class="level-detail-row">
+  
+
+  <div class="level-detail-img">
+    <img class="still" src="P3/l22 (1).png" alt="">
+    <img class="hover" src="P3/l22 (2).png" alt="">
+  </div>
+
+  <div class="level-detail-text">
+    <h4>Dialogue</h4>
+    <p>
+      Talk to the villagers to recive task.
+    </p>
+  </div>
+
+</div>
+
+
+<div class="level-detail-row">
+  
+
+  <div class="level-detail-img">
+    <img class="still" src="P3/l23 (1).png" alt="">
+    <img class="hover" src="P3/l23 (2).png" alt="">
+  </div>
+
+  <div class="level-detail-text">
+    <h4>Use mechanic</h4>
+    <p>
+      Use the cold ability to make trees die. Obtian leaves(fire materials).
+    </p>
+  </div>
+
+</div>
+
+<div class="level-detail-row">
+  
+
+  <div class="level-detail-img">
+    <img class="still" src="P3/l24 (1).png" alt="">
+    <img class="hover" src="P3/l24 (2).png" alt="">
+  </div>
+
+  <div class="level-detail-text">
+    <h4>Use mechanic</h4>
+    <p>
+      Use the warm ability to make trees grow. Manage to escape.
+    </p>
+  </div>
+
+</div>
+
+
+<div class="level-detail-row">
+  
+
+  <div class="level-detail-img">
+    <img class="still" src="P3/l25 (1).png" alt="">
+    <img class="hover" src="P3/l25 (2).png" alt="">
+  </div>
+
+  <div class="level-detail-text">
+    <h4>Use mechanic</h4>
+    <p>
+      Use the warm ability to make plants grow. Manage to escape.
+    </p>
+  </div>
+
+</div>
+
         </div>
 
           <div class="art-content">
@@ -380,11 +707,67 @@ becomes essential, allowing the player to clear obstacles and break a way out.
 
          </p>
                       <img src="P3/3.png" alt="Interaction preview" class="narrative-img" />
+                           <img src="P3/graph (2).png" alt="Interaction preview" class="narrative-img" />
+
+
+                           
+<div class="level-detail-row">
+  
+
+  <div class="level-detail-img">
+    <img class="still" src="P3/l31 (1).png" alt="">
+    <img class="hover" src="P3/l31 (2).png" alt="">
+  </div>
+
+  <div class="level-detail-text">
+    <h4>Use mechanic</h4>
+    <p>
+      Use the warm ability to make ice melt. Use cold ability to freeze thr water. Break spider web.
+    </p>
+  </div>
+
+</div>
+
+<div class="level-detail-row">
+  
+
+  <div class="level-detail-img">
+    <img class="still" src="P3/l32 (1).png" alt="">
+    <img class="hover" src="P3/l32 (2).png" alt="">
+  </div>
+
+  <div class="level-detail-text">
+    <h4>Use mechanic</h4>
+    <p>
+      Use the cold ability to make trees die. Obtian leaves(fire materials).
+    </p>
+  </div>
+
+</div>
+
+
+<div class="level-detail-row">
+  
+
+  <div class="level-detail-img">
+    <img class="still" src="P3/l33 (1).png" alt="">
+    <img class="hover" src="P3/l33 (2).png" alt="">
+  </div>
+
+  <div class="level-detail-text">
+    <h4>Use mechanic</h4>
+    <p>
+      Use the warm ability to create fire. Manage to find the way out.
+    </p>
+  </div>
+
+</div>
+
         </div>
       </section>
 
 
-          <div class="art-section"> 
+          <div class="art-section" id="mechanics"> 
   <div class="art-title"> 
     <h1>Mechanics</h1>
    </div>
@@ -459,6 +842,17 @@ becomes essential, allowing the player to clear obstacles and break a way out.
   </div>
 
 </div>
+
+
+ <div class="art-section" id="artdev"> 
+  <div class="art-title">
+     <h1>Art development</h1>
+
+        <img src="P3/34.png" alt="Narrative Flow Diagram" class="Project2 inspiration" />
+        <img src="P3/35.png" alt="Narrative Flow Diagram" class="Project2 inspiration" />
+
+ </div>
+
 
   <div class="art-section">
     <div class="art-title"><h1>Thank you for reading!</h1></div>

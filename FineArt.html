@@ -1,64 +1,32 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Welcome to my Site..</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <title>Painting & Comics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://use.typekit.net/dbu8pdp.css">
-</head>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="This is my practice for making a web page.">
-  <meta name="keywords" content="HTML,CSS,art">
-
 
   <style>
-
-    
     body {
       background-color: rgb(253, 255, 246);
       color: rgb(196, 161, 161);
-      margin-top: 10px;
-      margin-bottom: 100px;
-      margin-right: 100px;
-      margin-left: 100px;
+      margin: 10px 100px 100px;
       font-family: "Roca", serif;
-      font-weight: 50;
       font-size: 15pt;
     }
 
+    /* 顶部标题 */
     p.TitleText {
       font-size: 50pt;
       color: rgb(203, 195, 249);
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
       padding: 10px;
-      top:50%;
-      left: 50%;
-      font-family: "Roca", serif;
       text-shadow: 0 0 30px rgb(255, 236, 244);
     }
-
-
-    p.InsText {
-      font-size: 10pt;
-      color: rgb(152, 186, 255);
-      font-weight: 100;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
-      font-family: "Roca", Bold;
-    }
-
 
     .logo-link {
       position: absolute;
       top: 50px;
       left: 70px;
-      font-family: "Roca", Regular;
       font-size: 25px;
       text-decoration: none;
       color: #439eff;
@@ -69,93 +37,358 @@
       text-decoration: underline;
     }
 
+    /* ========= Painting 部分的样式 ========= */
     .art-section {
-  display: flex;
-  gap: 5%;
-  align-items: flex-start;
-  padding: 40px;
-  max-width: 1000px;
-  margin: auto;
-}
+      display: flex;
+      gap: 5%;
+      align-items: flex-start;
+      padding: 40px 0;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-.art-title {
-  width: 30%;
-  font-family: "Roca", serif;
-  font-size: 32px;
-  color: #7e8a77;
-}
+    .art-title {
+      width: 30%;
+      font-family: "Roca", serif;
+      font-size: 32px;
+      color: #7e8a77;
+    }
 
-.art-content {
-  width: 70%;
-}
+    .art-content {
+      width: 70%;
+    }
 
-.art-content img {
+    .art-content img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .caption {
+      font-size: 14px;
+      color: gray;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #756565;
+    }
+
+    /* ========= Comics 三栏布局 ========= */
+
+    #comics-section {
+      max-width: 1200px;
+      margin: 50px auto;
+      display: flex;
+      gap: 40px;
+    }
+
+    /* 左边竖排选择 */
+    .comic-selector {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 180px;
+    }
+
+    .comic-tag {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid #b5c9a5;
+      background: #f6fbf0;
+      font-family: "Roca", serif;
+      cursor: pointer;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    .comic-tag.active {
+      background: #dbeec6;
+      border-color: #7ca45c;
+    }
+
+    /* 中间漫画展示 */
+    .comic-viewer {
+      flex: 1;
+      text-align: center;
+    }
+
+.comic-image {
   width: 100%;
+  max-width: 650px;   /* 你可以改成 600 / 700 / 800 */
+  margin: 0 auto 20px;
   border-radius: 10px;
-  margin-bottom: 10px;
+  display: block;
 }
 
-.caption {
-  font-size: 14px;
-  color: gray;
-  margin-bottom: 10px;
+    /* 右边翻页区域 */
+    .comic-controls-wrapper {
+      width: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .comic-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-end;
+    }
+
+    .comic-btn {
+      padding: 8px 16px;
+      border-radius: 999px;
+      border: 1px solid #b5c9a5;
+      background: #f6fbf0;
+      font-family: "Roca", serif;
+      cursor: pointer;
+      font-size: 14px;
+      color: #5f7d52;
+    }
+
+    .comic-btn:hover:not(:disabled) {
+      background: #e7f5d6;
+    }
+
+    .comic-btn:disabled {
+      opacity: .4;
+    }
+.category-nav {
+  display: flex;
+  gap: 20px;
+  margin: 10px 0 30px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding-bottom: 10px;
 }
 
-.description {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #756565;
+.category-link {
+  font-family: "Roca", serif;
+  font-size: 16pt;
+  text-decoration: none;
+  color: #7e8a77;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
 }
-    </style>
 
-    <body>
-        <a href="index.html" class="logo-link">Home
+.category-link:hover {
+  color: #4f6f4f;
+  border-bottom-color: #4f6f4f;
+}
 
-        </a>
-        <p class="TitleText">Painting and drawing</p>
-        <div class="art-section">
-            <div class="art-title">
-              <h2>WINTER LIGHT</h2>
-            </div>
-          
-            <div class="art-content">
-              <img src="winterlight.png" alt="Winter Light painting">
-              <p class="caption">Winter Light, 2023, Chicago</p>
-              <p class="description">
-                Flowers are the light of life in winter. This was done when Chicago starts to greening out the city each year with flowers. However, snow arrives at the unexpected moment and drowned these flowers. A sign of global warming and strength of life.
-              </p>
-            </div>
-          </div>
+  </style>
+</head>
 
-          <div class="art-section">
-            <div class="art-title">
-              <h2>Untitled</h2>
-            </div>
-          
-            <div class="art-content">
-              <img src="Whale.png" alt="Whale painting">
-              <p class="caption">Untitled, 2020, digital</p>
-              <p class="description">
-                This work was made in 2020, when I was studying at Falmouth Academy. The school dedicated a lot in helping students with their science fair research and the surrounded institutions contributed into marine studies. That was where the attention was brought in. I switched the position of human and animals in an aquarium, or leaving spaces for imagination in a world of reversed zoology.              </p>
-            </div>
-          </div>
+<body>
 
-          <div class="art-section">
-            <div class="art-title">
-              <h2>Untitled 2</h2>
-            </div>
-          
-            <div class="art-content">
-              <img src="Falmouth.jpg" alt="Whale painting">
-              <p class="caption">Untitled 2, 2019</p>
-              <p class="description">
-                A documentation of winter in Falmouth, MA. 
-              </p>       
-              </div>
-          </div>
-        
-    </body>
+<a href="index.html" class="logo-link">Home</a>
+
+<p class="TitleText">Painting & Comics</p>
+
+<div class="category-nav">
+  <a href="#painting-section" class="category-link">Painting & Drawing</a>
+  <a href="#comics-section" class="category-link">Comics</a>
+</div>
 
 
+<!-- ========= Painting section ========= -->
+<div id="painting-section">
 
+  <div class="art-section">
+    <div class="art-title">
+      <h2>WINTER LIGHT</h2>
+    </div>
+    <div class="art-content">
+      <img src="winterlight.png" alt="Winter Light painting">
+      <p class="caption">Winter Light, 2023, Chicago</p>
+      <p class="description">
+        Flowers are the light of life in winter. This was done when Chicago starts to greening out
+        the city each year with flowers. However, snow arrives at the unexpected moment and drowned
+        these flowers. A sign of global warming and strength of life.
+      </p>
+    </div>
+  </div>
+
+  <div class="art-section">
+    <div class="art-title">
+      <h2>Untitled</h2>
+    </div>
+    <div class="art-content">
+      <img src="Whale.png" alt="Whale painting">
+      <p class="caption">Untitled, 2020, digital</p>
+      <p class="description">
+        This work was made in 2020, when I was studying at Falmouth Academy. The school dedicated
+        a lot in helping students with their science fair research and the surrounded institutions
+        contributed into marine studies. That was where the attention was brought in. I switched
+        the position of human and animals in an aquarium, or leaving spaces for imagination in a
+        world of reversed zoology.
+      </p>
+    </div>
+  </div>
+
+  <div class="art-section">
+    <div class="art-title">
+      <h2>Untitled 2</h2>
+    </div>
+    <div class="art-content">
+      <img src="Falmouth.jpg" alt="Falmouth painting">
+      <p class="caption">Untitled 2, 2019</p>
+      <p class="description">
+        A documentation of winter in Falmouth, MA.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+
+<div id="comics-section">
+
+  <div class="comic-selector">
+        <button class="comic-tag" data-comic="urbex">Monster Comic</button>
+    <button class="comic-tag active" data-comic="canned">Zoomsday</button>
+        <button class="comic-tag" data-comic="Monster">Untitled Monster comic</button>
+    <button class="comic-tag" data-comic="cats">Cats Being Cats</button>
+            <button class="comic-tag" data-comic="day">Day Dreamer</button>
+
+  </div>
+
+
+  <div class="comic-viewer">
+    <img id="comic-page" class="comic-image" src="" alt="Comic page">
+    <p id="comic-caption" class="caption"></p>
+    <p id="comic-description" class="description"></p>
+  </div>
+
+  <!-- Right: Page buttons -->
+  <div class="comic-controls-wrapper">
+    <div class="comic-controls">
+      <button id="prev-page" class="comic-btn">Prev</button>
+      <span id="comic-info">Page 1 / 1</span>
+      <button id="next-page" class="comic-btn">Next</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========= Script ========= -->
+<script>
+const comics = {
+  canned: {
+    title: "Zoomsday",
+    caption: "Zoomsday, 4-page comic",
+    description: "Only 2 human-beings left on earth are talking on zoom. If you start to live for yourself, you may get to the next level of the world.",
+    pages: [
+      "alwaysonline _1.jpg",
+      "alwaysonline _2.jpg",
+      "alwaysonline _3.jpg",
+      "alwaysonline _4.jpg"
+    ]
+  },
+
+  urbex: {
+    title: "Monster Comic",
+    caption: "Monster Comic, 2-page practice",
+    description: "A silly comic about a chaotic little creature.",
+    pages: [
+      "monster _1.jpg",
+      "monster _2.jpg"
+    ]
+  },
+
+  cats: {
+    title: "Cats Being Cats",
+    caption: "Cats being cats, short comic",
+    description: "Ah, my days with my foster cats.",
+    pages: [
+      "grapejelly.jpg",
+      "grapeJelly (2).jpg"
+    ]
+  },
+
+  day: {
+    title: "Day Dreamer",
+    caption: "Day Dreamer, 1 page",
+    description: "Don't day dream. Wait- don't think about food.",
+    pages: [
+      "DayDreaming.jpg"
+    ]
+  },
+
+    Monster: {
+    title: "Monster comic",
+    caption: "Untitled monster short, 6 grids",
+    description: "Tragic and short life, just like this comic.",
+    pages: [
+      "anothermonster_1.jpg",
+            "anothermonster_2.jpg",
+                  "anothermonster_3.jpg",
+                        "anothermonster_4.jpg",
+                              "anothermonster_5.jpg",
+                                    "anothermonster_6.jpg"
+    ]
+  }
+};
+
+let currentComicKey = "urbex";
+let currentPage = 0;
+
+const comicImg = document.getElementById("comic-page");
+const prevBtn = document.getElementById("prev-page");
+const nextBtn = document.getElementById("next-page");
+const infoSpan = document.getElementById("comic-info");
+const captionEl = document.getElementById("comic-caption");
+const descEl = document.getElementById("comic-description");
+const comicTags = document.querySelectorAll(".comic-tag");
+
+function updateComic() {
+  const comic = comics[currentComicKey];
+  const pages = comic.pages;
+
+  comicImg.src = pages[currentPage];
+  infoSpan.textContent = `Page ${currentPage + 1} / ${pages.length}`;
+  captionEl.textContent = comic.caption;
+  descEl.textContent = comic.description;
+
+  prevBtn.disabled = currentPage === 0;
+  nextBtn.disabled = currentPage === pages.length - 1;
+
+  comicTags.forEach(btn =>
+    btn.classList.toggle("active", btn.dataset.comic === currentComicKey)
+  );
+}
+
+prevBtn.addEventListener("click", () => {
+  if (currentPage > 0) {
+    currentPage--;
+    updateComic();
+  }
+});
+
+nextBtn.addEventListener("click", () => {
+  const pages = comics[currentComicKey].pages;
+  if (currentPage < pages.length - 1) {
+    currentPage++;
+    updateComic();
+  }
+});
+
+comicTags.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const key = btn.dataset.comic;
+    if (key !== currentComicKey) {
+      currentComicKey = key;
+      currentPage = 0;
+      updateComic();
+    }
+  });
+});
+
+updateComic();
+</script>
+
+</body>
 </html>
