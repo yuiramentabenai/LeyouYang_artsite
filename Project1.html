@@ -253,7 +253,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: rgb(230, 255, 206);  /* 与你的背景颜色一致，可改 */
+  background: rgb(230, 255, 206);
   padding: 10px 0 15px;
   z-index: 9999;
   border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -264,7 +264,7 @@
   gap: 50px;
   justify-content: flex-start;
   padding-left: 40px;
-  margin-bottom: 10px;   /* 和下面一行索引的间距 */
+  margin-bottom: 10px;
 }
 
 .logo-link {
@@ -274,7 +274,6 @@
   text-decoration: none;
 }
 
-/* 第二行索引：自动跟在后面 */
 .category-nav {
   display: flex;
   justify-content: center;
@@ -297,9 +296,16 @@
   border-bottom-color: #4f6f4f;
 }
 
-/* 把内容往下推，不让导航挡住 */
-body {
-  padding-top: 160px;
+
+
+
+.hero-note {
+  text-align: center;
+  font-size: 20px;
+  color: #6d8550; 
+  margin-top: 10px;
+  opacity: 0.9;
+  font-family: "Roca", serif;
 }
   </style>
 </head>
@@ -340,6 +346,7 @@ body {
 </section>
 
 
+  <p class="hero-note">Click on image to view video on YouTube</p>
 
   <div class="art-section" id="opening">
     <div class="art-content img">
