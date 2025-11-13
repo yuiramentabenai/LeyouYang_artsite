@@ -157,47 +157,137 @@
       color: rgb(255, 187, 224);
     }
 
-    @media (max-width: 768px) {
-      body {
-        margin: 1vh 5vw 5vh 5vw;
-        font-size: 12pt;
-      }
+    .game-thumb {
+  width: 300px;
+}
 
-      .Intro-section, .Ana-section, .Option-section {
-        position: static;
-        width: 100%;
-        text-align: center;
-        margin: 10px 0;
-        flex-direction: column;
-      }
+.cam-img {
+  width: 300px;
+  margin-top: 300px;
+  margin-bottom: 100px;
+  margin-right: 400px;
+  margin-left: 0;
+}
 
-      .Option-section {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
+   @media (max-width: 768px) {
+  body {
+    margin: 1vh 5vw 5vh 5vw;
+    font-size: 12pt;
+  }
+  .Ana-section {
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    width: 70%;
+    min-height: 80vh; 
+    display: flex;
+    justify-content: center; 
+    margin: 20px 0;
+  }
 
-      .text-overlay {
-        left: 5%;
-        right: 5%;
-        font-size: 0.8rem;
-      }
 
-      .window-wrapper {
-        width: 90%;
-        margin: 0 auto;
-      }
+  .window-wrapper {
+    position: relative;
+    width: 85vw;
+    max-width: 420px;
+  }
 
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-    }
+  .window-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+
+  .text-overlay {
+    position: absolute;
+    top: 7%;
+    left: 20%;
+    right: 30%;
+    bottom: 12%; 
+    font-size: 0.85rem;
+    line-height: 1.34;
+    color: #5f73a1;
+    text-align: left;
+    overflow-wrap: break-word; 
+    word-break: break-word;
+  }
+
+  .hero-layout {
+    position: relative;
+    min-height: 100vh;
+  }
+
+ 
+  .text-box {
+    position: absolute;
+    top: 20%;
+    left: 30vw;        
+    max-width: 80vw; 
+    font-size: 30pt; 
+    line-height: 1.3;
+    display: block; 
+  }
+
+   .Intro-section {
+    position: absolute;
+    top: 50%;
+    right: 8vw;
+    transform: translateY(-50%);
+    width: 30vw;
+    text-align: right;
+  }
+
+  .Intro-section img {
+    width: 100%;
+    height: auto;
+  }
+
+
+  .game-thumb {
+    position: absolute;
+    top: 20%;
+    left: 50vw;
+    width: 20vw;
+    height: auto;
+  }
+
+
+  .Option-section {
+    position: absolute;
+    bottom: 20px;
+    right: 8vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    width: auto;
+    padding: 0;
+  }
+
+
+  .cam-img {
+    position: fixed;
+    bottom: 18%;
+    left: 8vw;
+    width: 30vw;
+    height: auto;
+    margin: 0;  
+  }
+
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
   </style>
 </head>
 
 <body>
 
+  
+  <div class="hero-layout">
   <div class="text-box">
     <span>Hey there  ^- wwww-^</span> 
     <span>Welcome</span> 
@@ -207,9 +297,11 @@
     <span>gallery</span>
     <span>^ ^</span>
   </div>
-
+  </div>
   <p>
-    <img src="gamePage.png" style="width:300px">
+
+  <img src="gamePage.png" class="game-thumb">
+
   </p>
 
   <div class="Option-section">
@@ -232,7 +324,7 @@
   </div>
 
   <p>
-    <img src="Cam.png" style="width:300px; margin-top:300px; margin-bottom:100px; margin-right:400px; margin-left:0px;">
+      <img src="Cam.png" class="cam-img">
   </p>
 
 </body>
