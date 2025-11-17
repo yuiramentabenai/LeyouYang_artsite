@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>About — Christina / Leyou</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Christina/Leyou — artist & game designer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/dbu8pdp.css">
+
+  <style>
+ 
+    :root{
+      --bg: rgb(183,255,254);
+      --ink: rgb(35,109,247);
+      --link: #5f73a1;
+      --card: #f0f5ff;
+      --shadow: rgba(94,134,255,.25);
+      --winbar: #c7d7ff;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:var(--bg) url('Kor.png') repeat;
+      background-size: contain;
+      animation: moveBg 30s linear infinite;
+      font-family:"Roca", serif;
+      font-weight:300;
+      line-height:1.6;
+    }
+    @keyframes moveBg {0%{background-position:0 0}100%{background-position:1000px 0}}
+
+    a{color:var(--link);text-decoration:underline}
+    a:hover{opacity:.85}
+
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:24px 20px 80px;
+    }
+
+    .topbar{
+      display:flex; gap:12px; align-items:center;
+      position:sticky; top:0; background:rgba(183,255,254,.6);
+      backdrop-filter: blur(4px);
+      padding:10px 8px; z-index:10;
+      border-bottom:1px dashed rgba(35,109,247,.25);
+    }
+    .back{font-size:30px; font-family:"Pixelify Sans", system-ui; text-decoration:none}
+    .chips{margin-left:auto; display:flex; gap:10px; flex-wrap:wrap}
+    .chip{
+      font-family:"Pixelify Sans", system-ui;
+      font-size:30px; padding:6px 10px; border:1px solid var(--ink);
+      background:#e9f3ff; border-radius:6px; text-decoration:none;
+    }
+
+
+    .hero{
+      display:grid; grid-template-columns:120px 1fr; gap:16px; align-items:center; margin-top:18px;
+    }
+    .avatar{
+      width:120px; height:120px; border-radius:16px; overflow:hidden;
+      border:2px solid var(--ink); background:#fff; box-shadow:6px 6px 0 var(--shadow);
+    }
+    .avatar img{width:100%; height:100%; object-fit:cover}
+    .hero h1{
+      margin:0; font-size:36px; font-family:"CC Pixel Arcade Cartridge","Pixelify Sans",system-ui;
+      color:rgb(203,195,249); text-shadow:0 0 30px rgb(255,236,244);
+    }
+    .hero p{margin:6px 0 0}
+
+    .grid{
+      display:grid; grid-template-columns:1.3fr 1fr; gap:18px; margin-top:22px;
+    }
+    .col{display:grid; gap:18px}
+
+
+    .window{
+      background:var(--card); border:2px solid var(--ink); border-radius:12px;
+      box-shadow:8px 8px 0 var(--shadow); overflow:hidden;
+    }
+    .winbar{
+      display:flex; align-items:center; gap:6px;
+      background:var(--winbar);
+      padding:6px 8px; border-bottom:2px solid var(--ink);
+      font-family:"Pixelify Sans", system-ui; font-size:14px;
+    }
+    .dot{width:10px; height:10px; border:2px solid var(--ink); border-radius:50%; background:#fff}
+    .wbody{padding:14px 16px}
+    .wbody h2{
+      font-family:"Pixelify Sans", system-ui; margin:4px 0 10px; font-size:20px
+    }
+    ul.skill{columns:2; margin:6px 0 0; padding-left:18px}
+    .timeline{border-left:2px dashed var(--ink); padding-left:12px}
+    .timeline .t{margin:8px 0}
+    .sticky-right{
+      position:sticky; top:82px; align-self:start
+    }
+    .btn{
+      display:inline-block; margin-top:6px; padding:8px 12px;
+      border:2px solid var(--ink); border-radius:10px;
+      background:#fff; text-decoration:none; font-family:"Pixelify Sans", system-ui;
+      box-shadow:4px 4px 0 var(--shadow);
+    }
+
+
+    .footnote{margin-top:26px; font-size:12px; opacity:.8}
+
+
+    @media (max-width: 880px){
+      .grid{grid-template-columns:1fr}
+      .sticky-right{position:relative; top:0}
+      .hero{grid-template-columns:80px 1fr}
+      .avatar{width:80px;height:80px}
+      .chips{justify-content:flex-start; margin-left:0}
+    }
+
+.container .fullbleed{
+  position: static;
+  left: auto;
+  right: auto;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
+.hero-banner{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(183,255,254,.6); 
+  backdrop-filter: blur(3px);
+}
+
+
+.hero-card{
+  position: relative;
+  background:#fff;
+  border:2px solid var(--ink);
+  border-radius:16px;
+  box-shadow:8px 8px 0 var(--shadow);
+  overflow:hidden;
+  min-height: 240px;
+  transition: transform .35s ease, box-shadow .35s ease, filter .35s ease;
+}
+.hero-card--tall{
+  grid-row: 1 / span 2;
+  min-height: 52vh;  
+}
+
+.hero-card img,
+.hero-card video{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+}
+
+.hero-card figcaption{
+  position:absolute;
+  left:10px; bottom:10px;
+  padding:4px 8px;
+  font-family: "Pixelify Sans", system-ui;
+  font-size: 12px;
+  background: rgba(199,215,255,.85);
+  border:1px solid var(--ink);
+  border-radius: 8px;
+}
+
+
+.hero-banner:hover .hero-card{ filter: brightness(.9); opacity:.9; }
+.hero-card:hover{
+  transform: scale(1.02);
+  filter: brightness(1.05);
+  opacity:1;
+  z-index:1;
+  box-shadow: 0 0 24px rgba(110,170,255,.35), 8px 8px 0 var(--shadow);
+}
+
+
+@media (max-width: 880px){
+  .hero-banner{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .hero-card--tall{ grid-row:auto; min-height: 38vh; }
+  .hero-card{ min-height: 28vh; }
+}
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <a class="back" href="index.html">← Home</a>
+    <div class="chips">
+
+      <a class="chip" href="GamePage.html">Projects</a>
+    </div>
+  </div>
+<section class="container" style="padding-top:16px;">
+  <h1 style="margin:0; font-size:36px; font-family:'CC Pixel Arcade Cartridge','Pixelify Sans',system-ui; color:rgb(203,195,249); text-shadow:0 0 30px rgb(255,236,244);">
+    Christina / Leyou Yang
+  </h1>
+  <p style="margin:6px 0 0;">
+    Artist & Game Designer
+</section>
+
+
+  <div class="container">
+
+   <section class="fullbleed">
+  <div class="hero-banner">
+
+        <figure class="hero-card">
+      <img src="me2.jpg" alt="Christina daily life 2" />
+    </figure>
+
+    <figure class="hero-card">
+      <img src="me1.jpg" alt="Christina daily life 1" />
+    </figure>
+
+
+    <figure class="hero-card hero-card--tall">
+      <video autoplay muted loop playsinline>
+        <source src="me.mov" type="video/mp4" />
+      </video>
+    </figure>
+  </div>
+</section>
+
+
+
+    <div class="grid">
+      <div class="col">
+
+        <section id="statement" class="window">
+          <div class="winbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span> statement.txt</div>
+          <div class="wbody">
+            <h2>Artist / Design Statement</h2>
+            <p> My concepts come from my own life experiences.
+I grew up in urban spaces, but my parents would often take me back to rural areas near the mountains — that’s where I first encountered the idea of natural philosophy.
+Over time, I developed an interest in post-humanism and non-human-centered narratives.
+The root of my inspiration comes from seeing differences between people — from urban to rural, and later, from China to the U.S.
+I moved to the U.S. when I was sixteen, and there I began to see people as who they truly are, instead of what the internet labels them to be.
+The influence of environment in shaping people’s bias can be so strong.
+My wish is to create something that goes beyond the barriers of language and culture.
+That’s what my desire in creating has always been about.
+                </p>
+          </div>
+        </section>
+
+        <section id="skills" class="window">
+          <div class="winbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span> skills.ini</div>
+          <div class="wbody">
+            <h2>Tools & Focus</h2>
+            <ul class="skill">
+              <li>Unity (2D/3D, URP, Timeline)</li>
+              <li>C# gameplay / tools</li>
+              <li>Unreal for rendering</li>
+              <li>HTML/CSS/JS</li>
+              <li>Illustration & pixel</li>
+                            <li>Procreate & Animation</li>
+                                          <li>Adobe softwares: PS/PR/AI/Lightroom</li>
+              <li>Maya / Blender modeling/rendering</li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+
+
+      <aside class="col">
+        <section id="contact" class="window sticky-right">
+          <div class="winbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span> contact.sys</div>
+          <div class="wbody">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:leyouyang.christina@gmail.com">leyouyang.christina@gmail.com</a><br/>
+               Instagram: <a href="https://www.instagram.com/yuii_chan_im_pastelblue?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="https://www.instagram.com/yuii_chan_im_pastelblue?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">@yuii_chan_im_pastelblue</a></p>
+            <a class="btn" href="Christina_Yang_CV.pdf" download>Download Resume (PDF)</a>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <p class="footnote">© Christina / Leyou Yang</p>
+  </div>
+</body>
+</html>
