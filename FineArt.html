@@ -253,6 +253,7 @@
         <button class="comic-tag" data-comic="Monster">Untitled Monster comic</button>
     <button class="comic-tag" data-comic="cats">Cats Being Cats</button>
             <button class="comic-tag" data-comic="day">Day Dreamer</button>
+                        <button class="comic-tag" data-comic="MemoryCan">Memory Can</button>
 
   </div>
 
@@ -330,10 +331,29 @@ const comics = {
                               "anothermonster_5.JPG",
                                     "anothermonster_6.JPG"
     ]
-  }
-};
+  },
 
-let currentComicKey = "urbex";
+
+    MemoryCan: {
+    title: "Memory Can",
+    caption: "Cans that takes you back.",
+    description: "Drawn in memory is a personal choice",
+    pages: [
+      "mc1.JPG",
+            "mc2.JPG",
+                  "mc3.JPG",
+                        "mc4.JPG",
+                              "mc5.JPG",
+                                    "mc6.JPG",
+                                    "mc7.JPG",
+                                    "mc8.JPG",
+                                    "mc9.JPG"
+    ]
+  }
+}
+;
+
+let currentComicKey = "MemoryCan";
 let currentPage = 0;
 
 const comicImg = document.getElementById("comic-page");
